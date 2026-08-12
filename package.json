@@ -12,7 +12,7 @@
     "dev": "npm run build:themes && astro dev --host",
     "start": "npm run build:themes && astro dev",
     "build:themes": "npx --yes tsx scripts/generateThemes.ts",
-    "build": "npm run build:themes && astro check",
+    "build": "npm run build:themes && astro build",
     "preview": "astro preview",
     "astro": "astro",
     "lint": "eslint .",

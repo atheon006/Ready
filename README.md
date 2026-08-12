@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [![Netlify Status](https://api.netlify.com/api/v1/badges/530c2667-5dbc-4df3-824c-de37f975c833/deploy-status)](https://app.netlify.com/sites/chiragchrg/deploys)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
@@ -81,3 +82,6 @@ You may use, copy, modify, and distribute this project for any purpose, provided
 Attribution is appreciated but not required. If you use this project, consider giving visible credit is given to **[ChiragChrg](https://github.com/ChiragChrg)** somewhere within your project (e.g., in the README, footer, or documentation).
 
 Proper attribution helps acknowledge the effort invested in this project and upholds the values of integrity, transparency, and the open‑source community.
+=======
+# Ready
+>>>>>>> 1587ca8f1f8894d3e577eb2bfd0ecab48e038988
