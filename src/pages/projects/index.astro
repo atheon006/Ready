@@ -36,11 +36,9 @@ const { PROJECTS_LIST } = await ProjectInfo;
 
         <div class="grid grid-cols-[repeat(auto-fill,minmax(500px,1fr))] gap-x-6 gap-y-3 mt-4">
             {
-                PROJECTS_LIST?.map((project) => {
-                    if (project?.isHidden) return;
-
-                    return <ProjectCard project={project} />;
-                })
+                PROJECTS_LIST?.filter((project) => !project?.isHidden).map(
+                    (project) => <ProjectCard project={project} />
+                )
             }
         </div>
     </SectionTitle>

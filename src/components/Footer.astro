@@ -1,7 +1,4 @@
 ---
-import { Image } from "astro:assets";
-
-const currentYear = new Date().getFullYear();
 const { config } = Astro.props;
 ---
 
@@ -30,7 +27,7 @@ const { config } = Astro.props;
     </svg>
 
     <div class="w-full flex_center flex-col gap-2">
-        <Image src={config.logo} alt="LogoIcon" width={80} height={80} />
+        <div class="w-[60px] h-[72px] text-text" set:html={config.logo}></div>
         <span>{config.title}</span>
     </div>
 
@@ -47,12 +44,12 @@ const { config } = Astro.props;
                             rel="noreferrer"
                             class="w-[30px] h-[30px] flex items-center justify-center"
                         >
-                            <Fragment set:html={link.icon} />
+                            <span class="w-full h-full flex items-center justify-center" set:html={link.icon} />
                         </a>
                     ),
                 )
         }
     </div>
 
-    <span>© Copyright 2023-{currentYear} ChiragChrg</span>
+    <span>{config.copyrightText}</span>
 </footer>

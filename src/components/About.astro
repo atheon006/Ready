@@ -1,6 +1,5 @@
 ---
 import { Image } from "astro:assets";
-import { Avatar_250 } from "@assets/images";
 import { SectionTitle } from "@components/UI";
 
 const { config } = Astro.props;
@@ -8,17 +7,19 @@ const { config } = Astro.props;
 
 <section id="about" class="w-full min-h-screen py-4 pt-14 bg-background">
     <SectionTitle
-        title="About Me"
+        title="À Propos de Moi"
         color="primary"
         className="h-screen flex flex-col justify-center"
+        i18nKey="about_section_title"
     >
         <div class="flex_center flex-col lg:flex-row w-full h-full py-10 gap-8">
             <Image
-                src={Avatar_250}
+                src={config.aboutAvatar}
                 alt="About_Avatar"
-                class="Fade_Up rounded-full scale-x-[-1] lg:mx-14"
-                width={250}
-                height={250}
+                class="Fade_Up rounded-full lg:mx-14 object-cover"
+                width={896}
+                height={896}
+                quality={100}
                 loading="lazy"
                 decoding="async"
             />
@@ -26,7 +27,7 @@ const { config } = Astro.props;
             <div
                 class="Fade_Up w-full md:w-[80%] lg:w-[60%] flex justify-center items-start flex-col gap-4 lg:border-l border-primary py-8 lg:pl-10"
             >
-                <h2 class="Fade_Up text-[1.5em] font-bold">Hey there! 👋🏻</h2>
+                <h2 class="Fade_Up text-[1.5em] font-bold" data-i18n="about_greeting">Bonjour ! 👋🏻</h2>
                 {
                     config.description &&
                         config.description.map((para: string) => (

@@ -161,639 +161,593 @@ const COMMON_FEATURES = {
 export const PROJECTS_LIST: IProject[] = [
     {
         isHidden: false,
-        name: "ARMS v4",
-        shortDescription: "Next-generation academic resource platform for frictionless student access and robust faculty management.",
-        description: "ARMS v4 (Academic Resource Management System) is a modern educational platform enabling students to effortlessly browse and download subject-specific study materials uploaded by faculty. With advanced architecture powered by Redux Toolkit, Prisma ORM, and Authjs, ARMS v4 delivers a fast, secure, and scalable experience. Anonymous login, structured resource management, and integrated UI streamlining make it ideal for institutions of any size. Building on previous versions—now faster, more intuitive, and developer-friendly.",
+        name: "portfolio-Ready-du-copa",
+        shortDescription: "Template & landing page de portfolio prêt à l'emploi avec rendu CSS moderne et fluide.",
+        description: "portfolio-Ready-du-copa est un template / landing de portfolio prêt à l’emploi, construit autour d’un rendu front-end CSS et d’une identité publique lisible. Le dépôt reflète une architecture de portfolio légère, propre et extensible.",
         logoImage: LOGOS.ArmsLogo,
         previewImage: SCREENSHOTS.Armsv3Shots,
         deviceMockupImage: MOCKUPS.ARMSv3Mockup,
-        theme: "#FFF",
+        theme: "#111416",
         status: "completed",
-        liveUrl: "https://arms-v4.vercel.app/",
-        sourceUrl: "https://github.com/ChiragChrg/arms-v4",
+        liveUrl: "https://objetsperdus.online/",
+        sourceUrl: "https://github.com/atheon006/portfolio-Ready-du-copa",
         technologies: [
-            TECH_STACK.Nextjs,
-            TECH_STACK.TypeScript,
-            TECH_STACK.TailwindCSS,
-            TECH_STACK.Redux,
-            TECH_STACK.Prisma,
-            TECH_STACK.MongoDB,
-            TECH_STACK.Authjs,
-            TECH_STACK.EdgeStore,
+            TECH_STACK.HTML,
+            TECH_STACK.CSS,
+            TECH_STACK.JavaScript,
+            TECH_STACK.Vite,
+            TECH_STACK.GSAP,
         ],
         features: [
             {
-                title: "Anonymous Student Access",
-                description: "Effortless anonymous login for students to browse and download study materials."
+                title: "Design Responsive & Fluide",
+                description: "Mise en page épurée adaptée à toutes les tailles d'écran."
             },
             {
-                title: "Role-based Secure Authentication",
-                description: "Authjs with Prisma adapter enables secure access for faculty and admin accounts."
-            },
-            {
-                title: "Centralized Resource Management",
-                description: "Faculties can efficiently upload, organize, and manage academic PDF documents."
-            },
-            {
-                title: "Bulk Upload & Fast Download",
-                description: "Quick PDF bulk uploads for faculty and rapid download for students."
-            },
-            {
-                title: "Optimistic & Cached Data Fetching",
-                description: "Redux Toolkit Query enables fast UI, tag-based caching, and real-time updates."
-            },
-            {
-                title: "Scalable & Consistent Backend",
-                description: "Prisma ORM powers a scalable and reliable database schema."
+                title: "Animations GSAP & Scroll",
+                description: "Effets visuels et défilement fluide gérés avec GSAP et Lenis."
             },
             COMMON_FEATURES.Responsive,
             COMMON_FEATURES.SEO,
         ],
         logoSize: 50,
-        versions: [
-            {
-                title: "ARMS v4",
-                version: "4",
-                url: "https://arms-v4.vercel.app/"
-            },
-            {
-                title: "ARMS v3",
-                version: "3",
-                url: "https://arms-v3.vercel.app/"
-            },
-            {
-                title: "ARMS v2",
-                version: "2",
-                url: "https://armss.netlify.app/"
-            },
-            {
-                title: "ARMS v1",
-                version: "1",
-                url: "https://github.com/ChiragChrg/arms-php"
-            },
-        ]
-    },
-    {
-        isHidden: true,
-        name: "ARMS v3",
-        shortDescription: "An educational platform designed to empower students with easy access to study materials. Students can browse & download PDFs files.",
-        description: "ARMS (Academic Resource Management System) is an all-inclusive educational platform designed to empower students with easy access to study materials for their respective subjects. By logging in anonymously, students can conveniently browse and download PDF documents uploaded by authorized faculties. With a centralized approach, ARMS ensures that students can effortlessly find and obtain the necessary resources they need for their academic pursuits. It's a user-friendly solution that streamlines the process of resource management, providing a seamless experience for both students and faculties alike.",
-        logoImage: LOGOS.ArmsLogo,
-        previewImage: SCREENSHOTS.Armsv3Shots,
-        deviceMockupImage: MOCKUPS.ARMSv3Mockup,
-        theme: "#FFF",
-        status: "completed",
-        liveUrl: "https://arms-v3.vercel.app/",
-        sourceUrl: "https://github.com/ChiragChrg/arms-v3",
-        technologies: [
-            TECH_STACK.Nextjs,
-            TECH_STACK.TypeScript,
-            TECH_STACK.TailwindCSS,
-            TECH_STACK.TanStackQuery,
-            TECH_STACK.Zustand,
-            TECH_STACK.MongoDB,
-            TECH_STACK.Authjs,
-            TECH_STACK.EdgeStore
-        ],
-        features: [
-            {
-                title: "Anonymous Login",
-                description: "Students can conveniently  log in anonymously to browse and access study materials."
-            },
-            {
-                title: "Secure Access",
-                description: "Utilizes Authjs for secure authentication of authorized users using Google and Github Auth providers."
-            },
-            {
-                title: "Streamlined Resource Management",
-                description: "Efficient upload, update, and management of study materials using EdgeStore cloud storage."
-            },
-            {
-                title: "Document Download",
-                description: "Easily download PDF documents for offline access."
-            },
-            {
-                title: "Efficient Data Management",
-                description: "Automatically caches query results, reduces redundant network requests, and improves overall application performance using Tanstack Query."
-            },
-            COMMON_FEATURES.Responsive,
-            COMMON_FEATURES.SEO
-        ],
-        logoSize: 50,
-        versions: [
-            {
-                title: "ARMS v4",
-                version: "4",
-                url: "https://arms-v4.vercel.app/"
-            },
-            {
-                title: "ARMS v3",
-                version: "3",
-                url: "https://arms-v3.vercel.app/"
-            },
-            {
-                title: "ARMS v2",
-                version: "2",
-                url: "https://armss.netlify.app/"
-            },
-            {
-                title: "ARMS v1",
-                version: "1",
-                url: "https://github.com/ChiragChrg/arms-php"
-            },
-        ]
+        versions: []
     },
     {
         isHidden: false,
-        name: "Vortexa",
-        shortDescription: "Stay informed about current conditions, forecasts, and astronomical data, and gain valuable insights into current weather patterns and trends.",
-        description: "Explore comprehensive weather insights and forecasts with Vortexa. Stay informed about current conditions, forecasts, and astronomical data, and gain valuable insights into weather patterns and trends.",
-        logoImage: LOGOS.VortexaLogo,
-        previewImage: SCREENSHOTS.VortexaShots,
-        deviceMockupImage: MOCKUPS.VortexaMockup,
-        theme: "#fff",
-        status: "completed",
-        liveUrl: "https://vortexa.netlify.app/",
-        sourceUrl: "https://github.com/ChiragChrg/vortexa",
-        technologies: [
-            TECH_STACK.Astro,
-            TECH_STACK.Reactjs,
-            TECH_STACK.TypeScript,
-            TECH_STACK.TailwindCSS,
-            TECH_STACK.D3js,
-            TECH_STACK.Nanostores,
-            TECH_STACK.RESTAPI
-        ],
-        features: [
-            COMMON_FEATURES.Responsive,
-            COMMON_FEATURES.SEO,
-            {
-                title: "Dynamic Background Images",
-                description: "Experience the weather firsthand with dynamic background images that change based on the current weather conditions, creating an immersive atmosphere."
-            },
-            {
-                title: "City Search",
-                description: "Easily search for weather information in any city around the world. Get accurate forecasts and conditions for your desired location."
-            },
-            {
-                title: "Wind Direction Compass",
-                description: "Visualize wind direction with an interactive compass display. Easily identify the direction from which the wind is blowing for better understanding of weather patterns."
-            },
-            {
-                title: "Sunrise-Sunset Graph",
-                description: "Track the daily progression of sunrise and sunset times with an intuitive graph. Plan your activities accordingly based on daylight hours."
-            },
-            {
-                title: "Air Quality Index (AQI)",
-                description: "Stay informed about air quality levels with real-time Air Quality Index (AQI) data. Monitor pollution levels and take necessary precautions for your health."
-            },
-            {
-                title: "24-Hour Weather Forecast",
-                description: "Plan your day with a detailed 24-hour weather forecast displayed graphically. Visualize temperature changes, precipitation, and other weather parameters."
-            },
-            {
-                title: "2-Day Forecast",
-                description: "Get a glimpse of the weather ahead with a concise 2-day forecast. Stay prepared for upcoming changes in weather conditions."
-            }
-        ],
-        logoSize: 50,
-        versions: [
-            {
-                title: "Vortexa",
-                version: "2",
-                url: "https://vortexa.netlify.app/"
-            },
-            {
-                title: "CliMate",
-                version: "1",
-                url: "https://klimate.netlify.app/"
-            },
-        ]
-    },
-    {
-        isHidden: true,
-        name: "Next Mart",
-        shortDescription: "Discover an unparalleled shopping experience with Next Mart website. Unleash the power of online shopping with a diverse range of products.",
-        description: "Discover an unparalleled shopping experience with Next Mart, an exceptional web app developed by ChiragChrg. Unleash the power of online shopping with a vast array of products at your fingertips",
+        name: "interactive-designer-portfolio",
+        shortDescription: "Portfolio interactif pour designers avec une interface utilisateur riche et dynamique.",
+        description: "interactive-designer-portfolio est un portfolio interactif pour designers, avec une interface utilisateur riche et une présence publique orientée design. Le dépôt expose une expérience de mise en valeur visuelle et de navigation légère.",
         logoImage: LOGOS.NextmartLogo,
         previewImage: SCREENSHOTS.NextmartShots,
         deviceMockupImage: MOCKUPS.ARMSv3Mockup,
-        theme: "#090b0b",
-        status: "development",
-        liveUrl: "https://nextmart.vercel.app/",
-        sourceUrl: "https://github.com/ChiragChrg/nextmart",
+        theme: "#1a1a2e",
+        status: "completed",
+        liveUrl: "https://github.com/atheon006/interactive-designer-portfolio",
+        sourceUrl: "https://github.com/atheon006/interactive-designer-portfolio",
         technologies: [
-            TECH_STACK.Nextjs,
-            TECH_STACK.TypeScript,
-            TECH_STACK.MongoDB,
-            TECH_STACK.Authjs,
-            TECH_STACK.Redux,
-            TECH_STACK.TailwindCSS
+            TECH_STACK.HTML,
+            TECH_STACK.CSS,
+            TECH_STACK.JavaScript,
+            TECH_STACK.Reactjs,
         ],
         features: [
+            {
+                title: "UI Orientée Design",
+                description: "Interface soignée pour mettre en valeur les projets créatifs."
+            },
             COMMON_FEATURES.Responsive,
             COMMON_FEATURES.SEO,
         ],
-        logoSize: 40,
+        logoSize: 50,
         versions: []
     },
     {
-        isHidden: true,
-        name: "ARMS v2",
-        shortDescription: "A platform which simplifies resource management for students. Faculties can upload PDF files. Students download study materials anonymously.",
-        description: "ARMS (Academic Resource Management System) is an all-inclusive educational platform designed to empower students with easy access to study materials for their respective subjects. By logging in anonymously, students can conveniently browse and download PDF documents uploaded by authorized faculties. With a centralized approach, ARMS ensures that students can effortlessly find and obtain the necessary resources they need for their academic pursuits. It's a user-friendly solution that streamlines the process of resource management, providing a seamless experience for both students and faculties alike.",
-        logoImage: LOGOS.ArmsLogo,
-        previewImage: SCREENSHOTS.Armsv2Shots,
-        deviceMockupImage: MOCKUPS.ARMSv2Mockup,
-        theme: "#fff",
-        status: "completed",
-        liveUrl: "https://armss.netlify.app/",
-        sourceUrl: "https://github.com/ChiragChrg/ARMS",
+        isHidden: false,
+        name: "ARENA-V3",
+        shortDescription: "Architecture d'une application AI Studio avec intégration TypeScript et Gemini API.",
+        description: "ARENA-V3 est le dépôt TypeScript dédié à l’architecture d’une app AI Studio, avec une logique de déploiement local et les instructions nécessaires pour le paramétrage de GEMINI_API_KEY et l’exécution de l’application.",
+        logoImage: LOGOS.VortexaLogo,
+        previewImage: SCREENSHOTS.VortexaShots,
+        deviceMockupImage: MOCKUPS.VortexaMockup,
+        theme: "#0f172a",
+        status: "development",
+        liveUrl: "https://github.com/atheon006/ARENA-V3",
+        sourceUrl: "https://github.com/atheon006/ARENA-V3",
         technologies: [
-            TECH_STACK.Vite,
-            TECH_STACK.Reactjs,
+            TECH_STACK.TypeScript,
             TECH_STACK.Nodejs,
-            TECH_STACK.MongoDB,
-            TECH_STACK.GoogleCloud
+            TECH_STACK.Reactjs,
+            TECH_STACK.RESTAPI,
         ],
         features: [
             {
-                title: "Anonymous Login",
-                description: "Students can conveniently  log in anonymously to browse and access study materials."
+                title: "Intégration AI Studio & Gemini",
+                description: "Gestion d'API et réponses intelligentes avec la clé API Gemini."
             },
             {
-                title: "Streamlined Resource Management",
-                description: "Upload, update, and management of study materials using Google Drive cloud storage."
-            },
-            {
-                title: "Document Download",
-                description: "Easily download PDF documents for offline access."
+                title: "Déploiement Local",
+                description: "Architecture TypeScript propre avec scripts de lancement simplifiés."
             },
             COMMON_FEATURES.Responsive,
             COMMON_FEATURES.SEO,
         ],
-        logoSize: 55,
+        logoSize: 50,
         versions: [
             {
-                title: "ARMS v4",
-                version: "4",
-                url: "https://arms-v4.vercel.app/"
-            },
-            {
-                title: "ARMS v3",
+                title: "ARENA V3",
                 version: "3",
-                url: "https://arms-v3.vercel.app/"
+                url: "https://github.com/atheon006/ARENA-V3"
             },
             {
-                title: "ARMS v2",
+                title: "ARENA V2",
                 version: "2",
-                url: "https://armss.netlify.app/"
-            },
-            {
-                title: "ARMS v1",
-                version: "1",
-                url: "https://github.com/ChiragChrg/arms-php"
-            },
+                url: "https://github.com/atheon006"
+            }
         ]
     },
     {
         isHidden: false,
-        name: "XRecon",
-        shortDescription: "A real-time chat app, reminiscent of WhatsApp, allowing users to register, login, and connect with friends and family through instant messaging.",
-        description: "XRecon is a dynamic real-time chat app that offers a seamless communication experience, akin to popular platforms like WhatsApp. With XRecon, users can effortlessly register and log in to their accounts, enabling them to connect with friends and family through instant messaging. Whether it's sharing updates, engaging in conversations, or simply staying connected, XRecon provides a user-friendly interface for convenient and reliable communication.",
+        name: "CypherX",
+        shortDescription: "Dépôt officiel du bot et système d'automatisation CypherX.",
+        description: "Le dépôt officiel CypherX — Un bot multifonction et système d'automatisation performant pour la gestion et l'interaction interactive.",
         logoImage: LOGOS.XReconLogo,
         previewImage: SCREENSHOTS.XreconShots,
         deviceMockupImage: MOCKUPS.XreconMockup,
-        theme: "#001220",
-        status: "development",
-        liveUrl: "https://xrecon.netlify.app/",
-        sourceUrl: "https://github.com/ChiragChrg/xrecon",
-        demoCredentials: { email: "demouser123@gmail.com", password: "DemoUser123" },
+        theme: "#0d1117",
+        status: "completed",
+        liveUrl: "https://github.com/atheon006/CypherX",
+        sourceUrl: "https://github.com/atheon006/CypherX",
         technologies: [
-            TECH_STACK.Vite,
-            TECH_STACK.Reactjs,
+            TECH_STACK.JavaScript,
             TECH_STACK.Nodejs,
-            TECH_STACK.MongoDB,
-            TECH_STACK.Socketio
+            TECH_STACK.RESTAPI,
         ],
         features: [
             {
-                title: "Real-Time Chat",
-                description: "Engage in real-time conversations with other users using Socket.io technology providing seamless communication."
-            },
-            {
-                title: "Dynamic User Avatars",
-                description: "Personalize your profile with dynamic user avatars generated using the Multiavatar API. Each user gets a unique and colorful avatar based on their username."
-            },
-            {
-                title: "Private Messaging",
-                description: "Communicate privately with other users through secure and encrypted messaging. Exchange messages without the worry of unauthorized access."
-            },
-            {
-                title: "Emojis and Reactions",
-                description: "Express yourself with a wide range of emojis and reactions. Add fun and personality to your messages with animated emojis and customizable reactions."
+                title: "Automatisation & Bot",
+                description: "Traitement de commandes interactives et gestion de sessions."
             },
             COMMON_FEATURES.Responsive,
-            COMMON_FEATURES.SEO,
         ],
-        logoSize: 55,
+        logoSize: 50,
+        versions: [
+            {
+                title: "CypherX Official",
+                version: "1",
+                url: "https://github.com/atheon006/CypherX"
+            },
+            {
+                title: "CypherX Ultra",
+                version: "Ultra",
+                url: "https://github.com/atheon006/CypherX-Ultra"
+            }
+        ]
+    },
+    {
+        isHidden: false,
+        name: "CypherX-Ultra",
+        shortDescription: "Version mini et ultra-légère de CypherX avec support multi-session.",
+        description: "Mini Version of CypherX which is very lightweight and has multi-session support. Une version optimisée et ultra-rapide pour des performances maximales.",
+        logoImage: LOGOS.XReconLogo,
+        previewImage: SCREENSHOTS.XreconShots,
+        deviceMockupImage: MOCKUPS.XreconMockup,
+        theme: "#161b22",
+        status: "completed",
+        liveUrl: "https://github.com/atheon006/CypherX-Ultra",
+        sourceUrl: "https://github.com/atheon006/CypherX-Ultra",
+        technologies: [
+            TECH_STACK.JavaScript,
+            TECH_STACK.Nodejs,
+            TECH_STACK.RESTAPI,
+        ],
+        features: [
+            {
+                title: "Support Multi-Session",
+                description: "Gestion simultanée de plusieurs sessions avec empreinte mémoire minimale."
+            },
+            COMMON_FEATURES.Responsive,
+        ],
+        logoSize: 50,
         versions: []
     },
     {
         isHidden: false,
-        name: "YoaTube",
-        shortDescription: "YoaTube is a YouTube-inspired video streaming app. Enjoy a vast collection of videos, personalized recommendations, and a seamless user interface.",
-        description: "YoaTube is a dynamic video streaming application, designed with the power of the YouTube API. This innovative platform provides users with an immersive and engaging video-watching experience similar to YouTube. Explore an extensive library of videos. With YoaTube, you can dive into a world of captivating videos, all within a seamless and user-friendly interface.",
+        name: "VENOM-ULTRA-V9",
+        shortDescription: "Framework de bot et de scripts d'automatisation ultra-puissant.",
+        description: "This bot is listed as one of the most strongest bug bot ever. Un projet puissant axé sur l'automatisation, les tests et l'exploration de scripts.",
         logoImage: LOGOS.YoatubeLogo,
         previewImage: SCREENSHOTS.YoatubeShots,
         deviceMockupImage: MOCKUPS.YoatubeMockup,
-        theme: "#0f0f0f",
+        theme: "#1f1f1f",
         status: "completed",
-        liveUrl: "https://yoatube.netlify.app/",
-        sourceUrl: "https://github.com/ChiragChrg/yoatube",
+        liveUrl: "https://github.com/atheon006/VENOM-ULTRA-V9",
+        sourceUrl: "https://github.com/atheon006/VENOM-ULTRA-V9",
         technologies: [
-            TECH_STACK.HTML,
-            TECH_STACK.CSS,
             TECH_STACK.JavaScript,
-            TECH_STACK.Reactjs,
-            TECH_STACK.RESTAPI
-        ],
-        features: [
-            {
-                title: "Video Streaming",
-                description: "Stream high-quality videos seamlessly. Enjoy smooth playback with adaptive streaming technology."
-            },
-            {
-                title: "Search and Discovery",
-                description: "Discover new content with powerful search and recommendation algorithms. Find videos based on your interests and preferences."
-            },
-            COMMON_FEATURES.Responsive,
-            COMMON_FEATURES.SEO,
-        ],
-        logoSize: 55,
-        versions: []
-    },
-    {
-        isHidden: false,
-        name: "Srinivas Exam Manager",
-        shortDescription: "A software where Students can easily register, while staff and faculty efficiently manage academic details. Staff can generate hall tickets and marks cards.",
-        description: "Srinivas Exam Manager is a comprehensive exam management software exclusively developed for Srinivas University. Students can easily register and access their academic details, while staff and faculty members can efficiently manage student records. With its advanced features, the software can generate examination hall tickets and marks cards, simplifying the administrative process.",
-        logoImage: LOGOS.SrinivasLogo,
-        previewImage: SCREENSHOTS.SrinivasShots,
-        deviceMockupImage: MOCKUPS.SrinivasMockup,
-        theme: "#fff",
-        status: "completed",
-        liveUrl: "https://srinivas-exam-manager.netlify.app/",
-        sourceUrl: "https://github.com/ChiragChrg/srinivas-exam-manager",
-        demoCredentials: { email: "demouser123@gmail.com", password: "DemoUser123" },
-        technologies: [
-            TECH_STACK.HTML,
-            TECH_STACK.CSS,
-            TECH_STACK.JavaScript,
-            TECH_STACK.Reactjs,
             TECH_STACK.Nodejs,
-            TECH_STACK.MySQL
         ],
         features: [
             {
-                title: "Dynamic Hall Ticket Generation",
-                description: "Generate personalized hall tickets dynamically for each student. Include relevant exam details and student information."
+                title: "Exécution de Scripts Avancée",
+                description: "Traitement rapide et gestion d'événements complexes."
             },
-            {
-                title: "File Upload & Download",
-                description: "Upload and download files securely. Share resources such as study materials, question papers, and answer keys with students and faculty."
-            },
-            {
-                title: "Multi-Role Based User Management",
-                description: "Manage users with different roles such as Student, Faculty, Staff, Admin, Super-Admin. Assign permissions and access levels based on user roles."
-            },
-            {
-                title: "Exam Scheduling",
-                description: "Schedule exams efficiently with an intuitive scheduling system. Set exam dates, times and notify users about upcoming exams."
-            },
-            {
-                title: "Attendance Management",
-                description: "Monitor student attendance during exams. Keep track of attendance records and generate reports for analysis and compliance purposes."
-            },
-            {
-                title: "Notification System",
-                description: "Send automated notifications to students and faculty about exam-related events. Notify about exam schedules, hall ticket availability, and result announcements."
-            },
-            COMMON_FEATURES.Responsive,
-            COMMON_FEATURES.SEO,
         ],
-        logoSize: 55,
-        versions: []
-    },
-    {
-        isHidden: true,
-        name: "Piktures",
-        shortDescription: "Explore a wide range of vibrant and colorful images. Users can effortlessly search, download, and instantly access stunning visuals in high quality.",
-        description: "Piktures is an image browsing app that offers a vast collection of vibrant and colorful images. With Piktures, users can effortlessly search for any image and download them in high quality. Discover stunning visuals, express your creativity, and enhance your projects with Piktures. Explore and download captivating images with ease.",
-        logoImage: LOGOS.PikturesLogo,
-        previewImage: SCREENSHOTS.PikturesShots,
-        deviceMockupImage: MOCKUPS.ARMSv3Mockup,
-        theme: "#ddd",
-        status: "completed",
-        liveUrl: "https://pikture.netlify.app/",
-        sourceUrl: "https://github.com/ChiragChrg/pikture",
-        technologies: [
-            TECH_STACK.HTML,
-            TECH_STACK.CSS,
-            TECH_STACK.JavaScript,
-            TECH_STACK.Reactjs,
-            TECH_STACK.RESTAPI
-        ],
-        features: [
-            COMMON_FEATURES.Responsive,
-            COMMON_FEATURES.SEO,
-        ],
-        logoSize: 55,
+        logoSize: 50,
         versions: []
     },
     {
         isHidden: false,
-        name: "Days Beyond",
-        shortDescription: "Track the progress of the current year in days, hours, minutes, and seconds. Discover special occasions, search specific dates, and calculate your age.",
-        description: "Days Beyond is a feature-rich calendar event app that goes beyond traditional functionality. It not only helps you stay organized with events but also showcases the progress of the current year in percentage. Additionally, it displays the exact duration—days, hours, minutes, and seconds since January 1st of the current year, adding a unique perspective to time. Discover the significance of today, uncover special occasions, and easily search for specific dates. Furthermore, Days Beyond accurately calculates your age, ensuring precision and convenience.",
+        name: "XERA",
+        shortDescription: "Application de suivi de progression et de gestion de projets.",
+        description: "Tracez votre progression et donnez vie à vos projets. XERA aide à organiser, suivre et visualiser l'évolution des tâches et des objectifs.",
         logoImage: LOGOS.DaysbeyondLogo,
         previewImage: SCREENSHOTS.DaysbeyondShots,
         deviceMockupImage: MOCKUPS.DaysbeyondMockup,
-        theme: "#008ee0",
-        status: "completed",
-        liveUrl: "https://daysbeyond.netlify.app/",
-        sourceUrl: "https://github.com/ChiragChrg/DaysBeyond",
+        theme: "#2563eb",
+        status: "development",
+        liveUrl: "https://github.com/atheon006/XERA",
+        sourceUrl: "https://github.com/atheon006/XERA",
         technologies: [
-            TECH_STACK.HTML,
-            TECH_STACK.CSS,
-            TECH_STACK.JavaScript,
-            TECH_STACK.RESTAPI
+            TECH_STACK.TypeScript,
+            TECH_STACK.Reactjs,
+            TECH_STACK.TailwindCSS,
+            TECH_STACK.Nodejs,
         ],
         features: [
             {
-                title: "Accurate Time Progress",
-                description: "Calculate exact time elapsed since Jan 1. Display months, days, hours, minutes, and seconds passed since the beginning of the year."
-            },
-            {
-                title: "Accurate User Age Calculation",
-                description: "Calculate user ages accurately based on their date of birth. Display age in years, months, and days with precision."
-            },
-            {
-                title: "Significance of Today",
-                description: "Display the significance of today's date. Highlight special events, holidays, birthdays, or historical events that occurred on this day."
-            },
-            {
-                title: "Color of the Day",
-                description: "Show the color associated with the current day. Use color psychology to represent the mood or energy of the day."
+                title: "Suivi de Projets",
+                description: "Tableaux de bord et indicateurs visuels de progression."
             },
             COMMON_FEATURES.Responsive,
             COMMON_FEATURES.SEO,
         ],
-        logoSize: 55,
+        logoSize: 50,
         versions: []
     },
     {
-        isHidden: true,
-        name: "ARMS v1",
-        shortDescription: "Trouble finding your Study Materials? ARMS helps you to find PDFs for all subjects in one place. Students can easily login and download PDF files.",
-        description: "Trouble finding your Study Materials? ARMS helps you to find PDFs for all subjects in one place. Students can easily login and download PDF files.",
-        logoImage: LOGOS.ArmsPhpLogo,
-        previewImage: SCREENSHOTS.Armsv1Shots,
-        deviceMockupImage: MOCKUPS.ARMSv1Mockup,
-        theme: "#fff",
+        isHidden: false,
+        name: "Anita-V5",
+        shortDescription: "Framework d'automatisation et bot interactif propulsé par David Cyril Tech.",
+        description: "Anita V5 — Application et bot d'automatisation propulsé par David Cyril Tech avec des fonctionnalités avancées et modulaires.",
+        logoImage: LOGOS.SrinivasLogo,
+        previewImage: SCREENSHOTS.SrinivasShots,
+        deviceMockupImage: MOCKUPS.SrinivasMockup,
+        theme: "#4f46e5",
         status: "completed",
-        liveUrl: "http://arms-v1.infinityfreeapp.com/",
-        sourceUrl: "https://github.com/ChiragChrg/ARMS-PHP",
+        liveUrl: "https://github.com/atheon006/Anita-V5",
+        sourceUrl: "https://github.com/atheon006/Anita-V5",
+        technologies: [
+            TECH_STACK.JavaScript,
+            TECH_STACK.Nodejs,
+        ],
+        features: [
+            {
+                title: "Architecture Modulaire",
+                description: "Extensions faciles et commandes personnalisables."
+            },
+        ],
+        logoSize: 50,
+        versions: []
+    },
+    {
+        isHidden: false,
+        name: "EDUTRACK",
+        shortDescription: "Application de gestion et de suivi pédagogique (Dépôt privé 🔒).",
+        description: "Application de gestion et de suivi pédagogique permettant d'organiser les cours, étudiants et évaluations. Dépôt privé.",
+        logoImage: LOGOS.ArmsLogo,
+        previewImage: SCREENSHOTS.Armsv2Shots,
+        deviceMockupImage: MOCKUPS.ARMSv2Mockup,
+        theme: "#0284c7",
+        status: "completed",
+        liveUrl: "https://github.com/atheon006",
+        sourceUrl: "https://github.com/atheon006",
+        technologies: [
+            TECH_STACK.TypeScript,
+            TECH_STACK.Reactjs,
+            TECH_STACK.Nodejs,
+            TECH_STACK.MongoDB,
+        ],
+        features: [
+            {
+                title: "Gestion Pédagogique",
+                description: "Suivi centralisé des étudiants et du programme académique."
+            },
+            COMMON_FEATURES.Responsive,
+        ],
+        logoSize: 50,
+        versions: [
+            {
+                title: "EduTrack 2.1",
+                version: "2.1",
+                url: "https://github.com/atheon006"
+            },
+            {
+                title: "EduTrack 2.0",
+                version: "2.0",
+                url: "https://github.com/atheon006"
+            },
+            {
+                title: "EduTrack v1",
+                version: "1.0",
+                url: "https://github.com/atheon006"
+            }
+        ]
+    },
+    {
+        isHidden: false,
+        name: "EDUTRACK 2.0",
+        shortDescription: "Version 2.0 de l'application de suivi pédagogique (Dépôt privé 🔒).",
+        description: "Version 2.0 améliorée de l'application EduTrack avec une architecture optimisée et de nouvelles fonctionnalités de gestion. Dépôt privé.",
+        logoImage: LOGOS.ArmsLogo,
+        previewImage: SCREENSHOTS.Armsv3Shots,
+        deviceMockupImage: MOCKUPS.ARMSv3Mockup,
+        theme: "#0369a1",
+        status: "completed",
+        liveUrl: "https://github.com/atheon006",
+        sourceUrl: "https://github.com/atheon006",
+        technologies: [
+            TECH_STACK.TypeScript,
+            TECH_STACK.Reactjs,
+            TECH_STACK.Nodejs,
+            TECH_STACK.PostgreSQL,
+        ],
+        features: [
+            {
+                title: "Base de Données Relationnelle",
+                description: "Intégration PostgreSQL pour une gestion de données robuste."
+            },
+            COMMON_FEATURES.Responsive,
+        ],
+        logoSize: 50,
+        versions: []
+    },
+    {
+        isHidden: false,
+        name: "EDUTRACK 2.1",
+        shortDescription: "Version 2.1 de l'application de suivi pédagogique (Dépôt privé 🔒).",
+        description: "Version 2.1 de l'application EduTrack incluant des améliorations d'interface et d'intégration API. Dépôt privé.",
+        logoImage: LOGOS.ArmsLogo,
+        previewImage: SCREENSHOTS.Armsv3Shots,
+        deviceMockupImage: MOCKUPS.ARMSv3Mockup,
+        theme: "#0c4a6e",
+        status: "completed",
+        liveUrl: "https://github.com/atheon006",
+        sourceUrl: "https://github.com/atheon006",
+        technologies: [
+            TECH_STACK.TypeScript,
+            TECH_STACK.Nextjs,
+            TECH_STACK.Nodejs,
+            TECH_STACK.TailwindCSS,
+        ],
+        features: [
+            {
+                title: "Performance & UI",
+                description: "Rendu Next.js optimisé pour un chargement instantané."
+            },
+            COMMON_FEATURES.Responsive,
+        ],
+        logoSize: 50,
+        versions: []
+    },
+    {
+        isHidden: false,
+        name: "PORTFOLIO READY V1",
+        shortDescription: "Première version du portfolio personnel (Dépôt d'archive privé 🔒).",
+        description: "Première version du portfolio personnel d'Athéon. Dépôt d'archive privé servant de référence pour les itérations futures.",
+        logoImage: LOGOS.PikturesLogo,
+        previewImage: SCREENSHOTS.PikturesShots,
+        deviceMockupImage: MOCKUPS.ARMSv3Mockup,
+        theme: "#334155",
+        status: "completed",
+        liveUrl: "https://github.com/atheon006",
+        sourceUrl: "https://github.com/atheon006",
         technologies: [
             TECH_STACK.HTML,
             TECH_STACK.CSS,
             TECH_STACK.JavaScript,
-            TECH_STACK.PHP,
-            TECH_STACK.RESTAPI
         ],
         features: [
-            COMMON_FEATURES.Responsive,
-            COMMON_FEATURES.SEO,
+            {
+                title: "Archive Historique",
+                description: "Première version d'interface web personnelle."
+            },
         ],
-        logoSize: 55,
-        versions: [
-            {
-                title: "ARMS v4",
-                version: "4",
-                url: "https://arms-v4.vercel.app/"
-            },
-            {
-                title: "ARMS v3",
-                version: "3",
-                url: "https://arms-v3.vercel.app/"
-            },
-            {
-                title: "ARMS v2",
-                version: "2",
-                url: "https://armss.netlify.app/"
-            },
-            {
-                title: "ARMS v1",
-                version: "1",
-                url: "https://github.com/ChiragChrg/arms-php"
-            },
-        ]
+        logoSize: 50,
+        versions: []
     },
     {
-        isHidden: true,
-        name: "Film Stack",
-        shortDescription: "Discover trending movies and access details of all films and search for any movie you desire. Easily search for any film and immerse in the world of cinema.",
-        description: "FilmStack is the ultimate movie app that brings you all the details of trending films at your fingertips. Explore a vast collection of movies, access comprehensive information, and immerse yourself in the world of cinema. With FilmStack, you can effortlessly search for any movie, making it easy to find your favorite movies.",
+        isHidden: false,
+        name: "ARENA V2",
+        shortDescription: "Version 2 de l'application Arena (Dépôt privé 🔒).",
+        description: "Version 2 de l'application Arena. Architecture intermédiaire servant de fondation avant le développement d'ARENA-V3. Dépôt privé.",
+        logoImage: LOGOS.VortexaLogo,
+        previewImage: SCREENSHOTS.VortexaShots,
+        deviceMockupImage: MOCKUPS.VortexaMockup,
+        theme: "#1e293b",
+        status: "completed",
+        liveUrl: "https://github.com/atheon006",
+        sourceUrl: "https://github.com/atheon006",
+        technologies: [
+            TECH_STACK.TypeScript,
+            TECH_STACK.Reactjs,
+            TECH_STACK.Nodejs,
+        ],
+        features: [
+            {
+                title: "Architecture Web App",
+                description: "Gestion d'état et composants réutilisables."
+            },
+        ],
+        logoSize: 50,
+        versions: []
+    },
+    {
+        isHidden: false,
+        name: "QUIZ OTAKU",
+        shortDescription: "Application de quiz dédiée à la communauté otaku (Dépôt privé 🔒).",
+        description: "Application interactive de quiz thématique dédiée à l'univers des mangas et des animes pour la communauté Otaku. Dépôt privé.",
         logoImage: LOGOS.FilmstackLogo,
         previewImage: SCREENSHOTS.FilmstackShots,
         deviceMockupImage: MOCKUPS.ARMSv3Mockup,
-        theme: "#fff",
+        theme: "#dc2626",
         status: "completed",
-        liveUrl: "https://filmstack.netlify.app/",
-        sourceUrl: "https://github.com/ChiragChrg/FilmStack",
+        liveUrl: "https://github.com/atheon006",
+        sourceUrl: "https://github.com/atheon006",
         technologies: [
-            TECH_STACK.HTML,
-            TECH_STACK.CSS,
             TECH_STACK.JavaScript,
-            TECH_STACK.RESTAPI
+            TECH_STACK.Reactjs,
+            TECH_STACK.CSS,
         ],
         features: [
+            {
+                title: "Quiz Interactif",
+                description: "Questions chronométrées et calcul de score en direct."
+            },
             COMMON_FEATURES.Responsive,
-            COMMON_FEATURES.SEO,
         ],
-        logoSize: 55,
+        logoSize: 50,
         versions: []
     },
     {
-        name: "CovidTrax",
-        shortDescription: "",
-        description: "Search global COVID-19 statistics for each Country and Indian States and Districts",
-        logoImage: LOGOS.CovidtraxLogo,
-        previewImage: SCREENSHOTS.CovidTraxShots,
-        deviceMockupImage: MOCKUPS.ARMSv3Mockup,
-        theme: "#fff",
-        status: "completed",
-        liveUrl: "https://covidtrax.netlify.app/",
-        sourceUrl: "https://github.com/ChiragChrg/CovidTrax",
-        technologies: [
-            TECH_STACK.HTML,
-            TECH_STACK.CSS,
-            TECH_STACK.JavaScript,
-            TECH_STACK.RESTAPI
-        ],
-        features: [
-            COMMON_FEATURES.Responsive,
-            COMMON_FEATURES.SEO,
-        ],
-        isHidden: true,
-        logoSize: 55,
-        versions: []
-    },
-    {
-        isHidden: true,
-        name: "CliMate",
-        shortDescription: "Get instant weather updates. Accurate and easy to use, access weather updates for any location, including your current area using Geolocation support.",
-        description: "CliMate is a user friendly weather app that keeps you informed about the current conditions of any location. With CliMate, you can effortlessly access accurate weather updates for any place you choose. Utilizing geolocation support, it can even detect your current location, ensuring you always have the most precise weather information at your fingertips. Stay informed and be prepared with CliMate.",
+        isHidden: false,
+        name: "SHINOBI NO SATO",
+        shortDescription: "Expérimentation créative web sur le thème ninja (Dépôt privé 🔒).",
+        description: "Projet web interactif à thème ninja avec effets visuels originaux et éléments de jeu. Dépôt privé.",
         logoImage: LOGOS.ClimateLogo,
         previewImage: SCREENSHOTS.ClimateShots,
         deviceMockupImage: MOCKUPS.ClimateMockup,
-        theme: "#fff",
+        theme: "#15803d",
         status: "completed",
-        liveUrl: "https://klimate.netlify.app/",
-        sourceUrl: "https://github.com/ChiragChrg/CliMate",
+        liveUrl: "https://github.com/atheon006",
+        sourceUrl: "https://github.com/atheon006",
         technologies: [
             TECH_STACK.HTML,
             TECH_STACK.CSS,
             TECH_STACK.JavaScript,
-            TECH_STACK.RESTAPI
+            TECH_STACK.GSAP,
         ],
         features: [
+            {
+                title: "Animations Thématiques",
+                description: "Effets visuels dynamiques inspirés de l'univers shinobi."
+            },
             COMMON_FEATURES.Responsive,
-            COMMON_FEATURES.SEO,
         ],
-        logoSize: 55,
-        versions: [
+        logoSize: 50,
+        versions: []
+    },
+    {
+        isHidden: false,
+        name: "SHINOBI QUIZ",
+        shortDescription: "Application de quiz sur l'univers shinobi (Dépôt privé 🔒).",
+        description: "Application mobile/web de test de connaissances sur l'univers des shinobis avec classements et questions dynamiques. Dépôt privé.",
+        logoImage: LOGOS.FilmstackLogo,
+        previewImage: SCREENSHOTS.FilmstackShots,
+        deviceMockupImage: MOCKUPS.ARMSv3Mockup,
+        theme: "#b91c1c",
+        status: "completed",
+        liveUrl: "https://github.com/atheon006",
+        sourceUrl: "https://github.com/atheon006",
+        technologies: [
+            TECH_STACK.JavaScript,
+            TECH_STACK.Reactjs,
+        ],
+        features: [
             {
-                title: "ARMS v4",
-                version: "4",
-                url: "https://arms-v4.vercel.app/"
+                title: "Système de Quiz Shinobi",
+                description: "Niveaux de difficulté et statistiques de réponse."
             },
+            COMMON_FEATURES.Responsive,
+        ],
+        logoSize: 50,
+        versions: []
+    },
+    {
+        isHidden: false,
+        name: "QRUIZ GEEK",
+        shortDescription: "Plateforme de quiz pour passionnés de tech et pop-culture (Dépôt privé 🔒).",
+        description: "Plateforme de quiz interactive pour la culture geek, la technologie et les jeux vidéo. Dépôt privé.",
+        logoImage: LOGOS.CovidtraxLogo,
+        previewImage: SCREENSHOTS.CovidTraxShots,
+        deviceMockupImage: MOCKUPS.ARMSv3Mockup,
+        theme: "#7c3aed",
+        status: "completed",
+        liveUrl: "https://github.com/atheon006",
+        sourceUrl: "https://github.com/atheon006",
+        technologies: [
+            TECH_STACK.TypeScript,
+            TECH_STACK.Reactjs,
+            TECH_STACK.Nodejs,
+        ],
+        features: [
             {
-                title: "ARMS v3",
-                version: "3",
-                url: "https://arms-v3.vercel.app/"
+                title: "Catégories Multiples",
+                description: "Jeux vidéo, cinéma, programmation et sciences."
             },
+            COMMON_FEATURES.Responsive,
+        ],
+        logoSize: 50,
+        versions: []
+    },
+    {
+        isHidden: false,
+        name: "PROJET TUTO 2026",
+        shortDescription: "Projet d'apprentissage et d'expérimentation pédagogique 2026 (Dépôt privé 🔒).",
+        description: "Dépôt d'exercices, de modules de test et de tutoriels de programmation pour l'année 2026. Dépôt privé.",
+        logoImage: LOGOS.ArmsPhpLogo,
+        previewImage: SCREENSHOTS.Armsv1Shots,
+        deviceMockupImage: MOCKUPS.ARMSv1Mockup,
+        theme: "#059669",
+        status: "development",
+        liveUrl: "https://github.com/atheon006",
+        sourceUrl: "https://github.com/atheon006",
+        technologies: [
+            TECH_STACK.HTML,
+            TECH_STACK.CSS,
+            TECH_STACK.JavaScript,
+            TECH_STACK["C#"],
+        ],
+        features: [
             {
-                title: "ARMS v2",
-                version: "2",
-                url: "https://armss.netlify.app/"
+                title: "Modules Pédagogiques",
+                description: "Exercices pratiques de développement web et logiciel."
             },
+        ],
+        logoSize: 50,
+        versions: []
+    },
+    {
+        isHidden: false,
+        name: "JONES 6199",
+        shortDescription: "Dépôt public Jones-6199 d'expérimentation et d'outils.",
+        description: "Dépôt de scripts et d'utilitaires pour des expérimentations diverses.",
+        logoImage: LOGOS.PikturesLogo,
+        previewImage: SCREENSHOTS.PikturesShots,
+        deviceMockupImage: MOCKUPS.ARMSv3Mockup,
+        theme: "#475569",
+        status: "completed",
+        liveUrl: "https://github.com/atheon006/Jones-6199",
+        sourceUrl: "https://github.com/atheon006/Jones-6199",
+        technologies: [
+            TECH_STACK.JavaScript,
+            TECH_STACK.Nodejs,
+        ],
+        features: [
             {
-                title: "ARMS v1",
-                version: "1",
-                url: "https://github.com/ChiragChrg/arms-php"
+                title: "Scripts Utilitaires",
+                description: "Outillage et scripts divers d'automatisation."
             },
-        ]
+        ],
+        logoSize: 50,
+        versions: []
+    },
+    {
+        isHidden: false,
+        name: "TEST 2004",
+        shortDescription: "Dépôt de test et d'expérimentation publique.",
+        description: "Dépôt de bac à sable pour tester des prototypes rapides et des bouts de code.",
+        logoImage: LOGOS.PikturesLogo,
+        previewImage: SCREENSHOTS.PikturesShots,
+        deviceMockupImage: MOCKUPS.ARMSv3Mockup,
+        theme: "#64748b",
+        status: "completed",
+        liveUrl: "https://github.com/atheon006/test-2004",
+        sourceUrl: "https://github.com/atheon006/test-2004",
+        technologies: [
+            TECH_STACK.HTML,
+            TECH_STACK.JavaScript,
+        ],
+        features: [
+            {
+                title: "Bac à Sable",
+                description: "Tests de snippets et de fonctionnalités légères."
+            },
+        ],
+        logoSize: 50,
+        versions: []
     }
-]
+];
+//#endregion Projects List
+
 //#endregion Projects List

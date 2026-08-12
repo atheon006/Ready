@@ -2,11 +2,12 @@
 type Props = {
     title: string;
     color?: "primary" | "secondary";
+    i18nKey?: string;
 };
-const { title, color }: Props = Astro.props;
+const { title, color, i18nKey }: Props = Astro.props;
 ---
 
 <div class={`Fade_Up Title-Tag relative flex_center ${color}`}>
-    <p class="text-[1.6em]">{title}</p>
+    <p class="text-[1.6em]" data-i18n={i18nKey}>{title}</p>
     <span class="text-[1.5em]">{"()"}</span>
 </div>

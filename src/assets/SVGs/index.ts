@@ -1,5 +1,9 @@
-export { default as LogoIcon } from "./C.svg"
+export { default as LogoIcon } from "./R.svg"
 export { default as ContactArt } from "./ContactVector.svg"
+
+// Raw SVG strings (for inline rendering with currentColor)
+import LogoIconRawStr from "./R.svg?raw";
+export const LogoIconRaw = LogoIconRawStr;
 
 //Social Icons
 export { default as GithubIcon } from "./Github.svg"

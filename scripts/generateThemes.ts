@@ -62,18 +62,18 @@ const COLOR_THEME: ColorTheme = {
 
     default: {
         light: {
-            background: '#ffffff',
-            text: '#000000',
-            primary: '#6600ff',
-            secondary: '#ff00ff',
-            accent: '#8700f0',
+            background: '#f5f5f5',
+            text: '#0a0a0a',
+            primary: '#1a1a1a',
+            secondary: '#555555',
+            accent: '#333333',
         },
         dark: {
-            background: '#000000',
-            text: '#ffffff',
-            primary: '#6600ff',
-            secondary: '#ff00ff',
-            accent: '#8700f0',
+            background: '#0d0d0d',
+            text: '#f0f0f0',
+            primary: '#e0e0e0',
+            secondary: '#888888',
+            accent: '#aaaaaa',
         }
     },
 

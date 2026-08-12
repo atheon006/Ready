@@ -75,11 +75,11 @@
 }
 
 .theme-default.light {
-  --background: hsl(0, 0%, 100%);
-  --text: hsl(0, 0%, 0%);
-  --primary: 264, 100%, 50%;
-  --secondary: 300, 100%, 50%;
-  --accent: 273.8, 100%, 47.1%;
+  --background: hsl(0, 0%, 96.1%);
+  --text: hsl(0, 0%, 3.9%);
+  --primary: 0, 0%, 10.2%;
+  --secondary: 0, 0%, 33.3%;
+  --accent: 0, 0%, 20%;
   --primaryLite: hsla(var(--primary), 0.6);
   --primaryLiteAlt: hsla(var(--primary), 0.3);
   --secondaryLite: hsla(var(--secondary), 0.6);
@@ -90,33 +90,33 @@
   --orbitDotColor: hsl(var(--primary));
   --orbitGradient: conic-gradient(transparent, transparent, hsl(var(--primary)), hsl(var(--secondary)), hsl(var(--primary)));
   --orbitGradientAlt: conic-gradient(hsl(var(--primary)), hsl(var(--primary)), hsl(var(--secondary)), transparent, transparent);
-  --SkillGradient: linear-gradient(45deg, hsla(264, 60%, 80%, 0.5), hsla(300, 50%, 50%, 0.2));
-  --SkillGradientAlt: linear-gradient(-135deg, hsla(264, 50%, 55%, 0.5), hsla(300, 50%, 50%, 0.2));
+  --SkillGradient: linear-gradient(45deg, hsla(0, 60%, 80%, 0.5), hsla(0, 50%, 50%, 0.2));
+  --SkillGradientAlt: linear-gradient(-135deg, hsla(0, 50%, 55%, 0.5), hsla(0, 50%, 50%, 0.2));
   --gradient: linear-gradient(to right, hsl(var(--secondary)), hsl(var(--primary)), hsl(var(--primary)), hsl(var(--secondary)));
   --gradientLite: linear-gradient(45deg, var(--primaryLite), var(--secondaryLite));
   --cardGradient: linear-gradient(45deg, hsl(0, 0%, 95%), var(--primaryLiteAlt));
-  --cardGradientAlt: linear-gradient(-135deg, hsl(0, 0%, 15%), var(--primaryLiteAlt));
+  --cardGradientAlt: linear-gradient(-135deg, hsl(0, 0%, 14.415%), var(--primaryLiteAlt));
   --socialIconColor: hsl(var(--primary));
-  --contactSocialColor: hsla(0, 0%, 0%, 0.4);
+  --contactSocialColor: hsla(0, 0%, 3.9%, 0.4);
   --imgOverlayGradient: radial-gradient(circle, transparent, var(--background) 95%), linear-gradient(180deg, var(--background), transparent 25%), linear-gradient(0deg, var(--background), transparent 25%);
-  --miscCardGradient: linear-gradient(-45deg, hsl(0, 0%, 10%), var(--primaryLiteAlt));
+  --miscCardGradient: linear-gradient(-45deg, hsl(0, 0%, 9.61%), var(--primaryLiteAlt));
   --overlayGradient: radial-gradient(farthest-corner at 100% 0%, hsla(0, 0%, 85%, 0.5), transparent);
   --LinkBtnGradient: linear-gradient(-135deg, hsla(0, 0%, 80%, 0.8), hsla(0, 0%, 75%, 0.6));
-  --cursorColor: hsla(264, 100%, 50%, 0.6);
-  --cursorColorAlt: hsla(264, 100%, 50%, 0.8);
-  --cursorBackgroundColor: hsla(264, 100%, 50%, 0.2);
+  --cursorColor: hsla(0, 0%, 10.2%, 0.6);
+  --cursorColorAlt: hsla(0, 0%, 10.2%, 0.8);
+  --cursorBackgroundColor: hsla(0, 0%, 10.2%, 0.2);
   --dotColor: hsl(var(--primary));
-  --footer: hsl(264, 100%, 75%);
-  --footerSvgA: hsl(259, 75%, 80%);
-  --footerSvgB: hsl(256, 60%, 85%);
+  --footer: hsl(0, 0%, 75%);
+  --footerSvgA: hsl(-5, 0%, 80%);
+  --footerSvgB: hsl(-8, 0%, 85%);
 }
 
 .theme-default.dark {
-  --background: hsl(0, 0%, 0%);
-  --text: hsl(0, 0%, 100%);
-  --primary: 264, 100%, 50%;
-  --secondary: 300, 100%, 50%;
-  --accent: 273.8, 100%, 47.1%;
+  --background: hsl(0, 0%, 5.1%);
+  --text: hsl(0, 0%, 94.1%);
+  --primary: 0, 0%, 87.8%;
+  --secondary: 0, 0%, 53.3%;
+  --accent: 0, 0%, 66.7%;
   --primaryLite: hsla(var(--primary), 0.6);
   --primaryLiteAlt: hsla(var(--primary), 0.3);
   --secondaryLite: hsla(var(--secondary), 0.6);
@@ -124,28 +124,28 @@
   --accentLite: hsla(var(--accent), 0.6);
   --accentLiteAlt: hsla(var(--accent), 0.3);
   --headerGradient: linear-gradient(180deg, rgba(0,0,0,0.6), transparent);
-  --orbitDotColor: hsl(0, 0%, 100%);
-  --orbitGradient: conic-gradient(transparent, transparent, hsl(var(--primary)), hsl(var(--secondary)), hsl(0, 0%, 100%));
-  --orbitGradientAlt: conic-gradient(hsl(0, 0%, 100%), hsl(var(--primary)), hsl(var(--secondary)), transparent, transparent);
-  --SkillGradient: linear-gradient(45deg, hsla(264, 60%, 10%, 0.5), hsla(300, 50%, 10%, 0.2));
-  --SkillGradientAlt: linear-gradient(-135deg, hsla(264, 50%, 15%, 0.5), hsla(300, 50%, 15%, 0.2));
+  --orbitDotColor: hsl(0, 0%, 94.1%);
+  --orbitGradient: conic-gradient(transparent, transparent, hsl(var(--primary)), hsl(var(--secondary)), hsl(0, 0%, 94.1%));
+  --orbitGradientAlt: conic-gradient(hsl(0, 0%, 94.1%), hsl(var(--primary)), hsl(var(--secondary)), transparent, transparent);
+  --SkillGradient: linear-gradient(45deg, hsla(0, 60%, 10%, 0.5), hsla(0, 50%, 10%, 0.2));
+  --SkillGradientAlt: linear-gradient(-135deg, hsla(0, 50%, 15%, 0.5), hsla(0, 50%, 15%, 0.2));
   --gradient: linear-gradient(to right, hsl(var(--secondary)), hsl(var(--primary)), hsl(var(--primary)), hsl(var(--secondary)));
   --gradientLite: linear-gradient(45deg, var(--primaryLite), var(--secondaryLite));
   --cardGradient: linear-gradient(45deg, hsl(0, 0%, 1%), var(--primaryLiteAlt));
   --cardGradientAlt: linear-gradient(-135deg, hsl(0, 0%, 5%), var(--primaryLiteAlt));
-  --socialIconColor: hsl(0, 0%, 100%);
-  --contactSocialColor: hsla(0, 0%, 100%, 0.4);
+  --socialIconColor: hsl(0, 0%, 94.1%);
+  --contactSocialColor: hsla(0, 0%, 94.1%, 0.4);
   --imgOverlayGradient: radial-gradient(circle, transparent, var(--background) 95%), linear-gradient(180deg, var(--background), transparent 25%), linear-gradient(0deg, var(--background), transparent 25%);
   --miscCardGradient: linear-gradient(-45deg, hsl(0, 0%, 1%), var(--primaryLiteAlt));
   --overlayGradient: radial-gradient(farthest-corner at 100% 0%, hsla(0, 0%, 5%, 0.5), transparent);
   --LinkBtnGradient: linear-gradient(-135deg, hsla(0, 0%, 10%, 0.8), hsla(0, 0%, 15%, 0.6));
-  --cursorColor: hsla(0, 0%, 100%, 0.6);
-  --cursorColorAlt: hsla(0, 0%, 100%, 0.8);
-  --cursorBackgroundColor: hsla(264, 100%, 50%, 0.3);
-  --dotColor: hsl(0, 0%, 100%);
-  --footer: hsl(264, 100%, 15%);
-  --footerSvgA: hsl(259, 75%, 10%);
-  --footerSvgB: hsl(256, 60%, 5%);
+  --cursorColor: hsla(0, 0%, 94.1%, 0.6);
+  --cursorColorAlt: hsla(0, 0%, 94.1%, 0.8);
+  --cursorBackgroundColor: hsla(0, 0%, 87.8%, 0.3);
+  --dotColor: hsl(0, 0%, 94.1%);
+  --footer: hsl(0, 0%, 15%);
+  --footerSvgA: hsl(-5, 0%, 10%);
+  --footerSvgB: hsl(-8, 0%, 5%);
 }
 
 .theme-ocean.light {

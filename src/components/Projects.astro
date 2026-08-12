@@ -26,14 +26,10 @@ const SHOW_ALL_PROJECTS =
             class="grid grid-cols-[repeat(auto-fit,minmax(min(100%,500px),1fr))] gap-x-6 gap-y-3 mt-4 mb-8"
         >
             {
-                PROJECTS_LIST.map((project, index) => {
-                    if (project?.isHidden) return;
-
-                    // LIMIT PROJECT LIST TO 9 ITEMS
-                    if (index > PROJECT_LIST_LIMIT + 2) return;
-
-                    return <ProjectCard project={project} />;
-                })
+                PROJECTS_LIST
+                    .filter((project) => !project?.isHidden)
+                    .slice(0, PROJECT_LIST_LIMIT)
+                    .map((project) => <ProjectCard project={project} />)
             }
         </div>
 

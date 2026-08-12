@@ -15,21 +15,20 @@ const personStructuredData = {
     '@context': 'https://schema.org',
     '@type': 'Person',
     '@id': `${config.site.siteUrl}#person`,
-    name: 'Chirag Chrg',
+    name: 'Ready Kalonda',
     url: config.site.siteUrl,
-    jobTitle: 'Fullstack Software Engineer',
+    jobTitle: 'Développeur Full Stack | IA & Cybersécurité',
     image: config.site.avatar,
     sameAs: [
-        'https://github.com/ChiragChrg',
-        'https://www.linkedin.com/in/chiragchrg/',
-        'https://x.com/ChrgChirag',
-        'https://www.instagram.com/chiragchrg/',
+        'https://github.com/atheon006',
+        'https://www.linkedin.com/in/ready-kalonda-a8665a428/',
+        'https://discord.gg/wF4KcGYgz',
     ],
 };
 ---
 
 <!doctype html>
-<html lang="en" class=`theme-${config.theme} dark`>
+<html lang="fr" class=`theme-${config.theme} dark`>
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width" />
@@ -38,8 +37,8 @@ const personStructuredData = {
         <meta name="robots" content="index, follow" />
         <meta name="google-site-verification" content={config.site.googleSiteVerification} />
         <meta name="keywords" content={config.site.keywords} />
-        <meta name="author" content="ChiragChrg" />
-        <meta name="publisher" content="ChiragChrg" />
+        <meta name="author" content="Ready Kalonda (Athéon)" />
+        <meta name="publisher" content="Athéon" />
         <link rel="manifest" href="/manifest.json" />
 
         <!-- Preload CSS Styles -->
@@ -172,5 +171,66 @@ const personStructuredData = {
         <Footer config={config.footer} />
         <Cursor />
         <script src="../script-loader.ts"></script>
+
+        <!-- i18n Language Switcher Script -->
+        <script is:inline type="module">
+            const translations = {
+                fr: {
+                    nav_about: "À PROPOS", nav_skills: "COMPÉTENCES", nav_projects: "PROJETS", nav_contact: "CONTACT",
+                    nav_about_mobile: "À Propos", nav_skills_mobile: "Compétences", nav_projects_mobile: "Projets", nav_contact_mobile: "Contact",
+                    about_section_title: "À Propos de Moi", about_greeting: "Bonjour ! 👋🏻",
+                    skills_section_title: "Compétences", skill_web: "Web & Programmation", skill_frontend: "Frontend",
+                    skill_backend: "Backend & APIs", skill_databases: "Bases de Données & Stockage",
+                    skill_state: "État & Événements", skill_cloud: "Cloud & DevOps",
+                    skill_tooling: "Outils & Observabilité", skill_config: "Config & Templating", skill_ides: "IDEs & Design",
+                    contact_headline: "Collaborons !", contact_sub1: "Contactez-moi pour discuter de vos besoins en développement web",
+                    contact_sub2: "ou simplement pour dire bonjour. 😉",
+                    lang_btn: "EN",
+                },
+                en: {
+                    nav_about: "ABOUT", nav_skills: "SKILLS", nav_projects: "PROJECTS", nav_contact: "CONTACT",
+                    nav_about_mobile: "About", nav_skills_mobile: "Skills", nav_projects_mobile: "Projects", nav_contact_mobile: "Contact",
+                    about_section_title: "About Me", about_greeting: "Hey there! 👋🏻",
+                    skills_section_title: "Tech Stack", skill_web: "Web & Programming", skill_frontend: "Frontend",
+                    skill_backend: "Backend & APIs", skill_databases: "Databases & Storage",
+                    skill_state: "State & Events", skill_cloud: "Cloud & DevOps",
+                    skill_tooling: "Tooling & Observability", skill_config: "Config & Templating", skill_ides: "IDEs & Design",
+                    contact_headline: "Let's collaborate!", contact_sub1: "Contact me to discuss your web development needs",
+                    contact_sub2: "or just to say hello. 😉",
+                    lang_btn: "FR",
+                },
+            };
+
+            function applyLang(lang) {
+                const t = translations[lang];
+                // Update html lang attribute
+                document.documentElement.lang = lang;
+                // Update all [data-i18n] elements
+                document.querySelectorAll('[data-i18n]').forEach(el => {
+                    const key = el.getAttribute('data-i18n');
+                    if (t[key] !== undefined) el.textContent = t[key];
+                });
+                // Update lang toggle buttons
+                document.querySelectorAll('[data-i18n-btn]').forEach(btn => {
+                    btn.textContent = t.lang_btn;
+                });
+                // Store preference
+                localStorage.setItem('lang', lang);
+            }
+
+            function toggleLang() {
+                const current = localStorage.getItem('lang') || 'fr';
+                applyLang(current === 'fr' ? 'en' : 'fr');
+            }
+
+            // Apply saved or default language on load
+            const savedLang = localStorage.getItem('lang') || 'fr';
+            applyLang(savedLang);
+
+            // Wire up all toggle buttons (desktop + mobile)
+            document.querySelectorAll('[data-i18n-btn]').forEach(btn => {
+                btn.addEventListener('click', toggleLang);
+            });
+        </script>
     </body>
 </html>

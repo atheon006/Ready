@@ -17,15 +17,22 @@ const showThemeDropdown = import.meta.env.PUBLIC_SHOW_THEME_MENU === 'true';
         </a>
 
         <nav class="Header_Nav relative tracking-wide flex gap-6">
-            <a class="Fade_Down_Header" href="#about">ABOUT</a>
-            <a class="Fade_Down_Header" href="#skills">SKILLS</a>
-            <a class="Fade_Down_Header" href="#projects">PROJECTS</a>
-            <a class="Fade_Down_Header" href="#contact">CONTACT</a>
+            <a class="Fade_Down_Header" href="#about" data-i18n="nav_about">À PROPOS</a>
+            <a class="Fade_Down_Header" href="#skills" data-i18n="nav_skills">COMPÉTENCES</a>
+            <a class="Fade_Down_Header" href="#projects" data-i18n="nav_projects">PROJETS</a>
+            <a class="Fade_Down_Header" href="#contact" data-i18n="nav_contact">CONTACT</a>
         </nav>
 
         <div class="flex_center gap-4">
             {showThemeDropdown && <ThemeDropdown className="Fade_Down_Header" idPrefix="Desktop" />}
             <ThemeButton className="Fade_Down_Header" />
+
+            <button
+                id="lang-toggle-desktop"
+                class="Fade_Down_Header px-3 py-1 text-sm font-bold border border-primary rounded-sm hover:bg-primary hover:text-background transition-colors duration-200"
+                aria-label="Switch language"
+                data-i18n-btn
+            >EN</button>
 
             <a
                 class="Fade_Down_Header Header_ActionBtn relative overflow-hidden rounded-sm flex_center"

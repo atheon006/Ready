@@ -47,7 +47,7 @@ const { config } = Astro.props;
                                 rel="noreferrer"
                                 class="Fade_Stagger w-[30px] h-[30px] flex items-center justify-center"
                             >
-                                <Fragment set:html={link.icon} />
+                                <span class="w-full h-full flex items-center justify-center" set:html={link.icon} />
                             </a>
                         ),
                     )
@@ -69,8 +69,9 @@ const { config } = Astro.props;
                 src={config.avatar}
                 alt=`${config.firstName} ${config.lastName} Avatar`
                 class="object-cover w-full h-full rounded-full noDrag"
-                width="180"
-                height="180"
+                width={896}
+                height={896}
+                quality={100}
                 priority
             />
         </div>

@@ -9,10 +9,10 @@
     "url": "https://chiragchrg.netlify.app/"
   },
   "scripts": {
-    "dev": "bun run build:themes && astro dev --open --host",
-    "start": "bun run build:themes && astro dev",
-    "build:themes": "ts-node scripts/generateThemes.ts",
-    "build": "bun run build:themes && astro check && astro build",
+    "dev": "npm run build:themes && astro dev --host",
+    "start": "npm run build:themes && astro dev",
+    "build:themes": "npx --yes tsx scripts/generateThemes.ts",
+    "build": "npm run build:themes && astro check",
     "preview": "astro preview",
     "astro": "astro",
     "lint": "eslint .",
@@ -51,5 +51,8 @@
     "@semantic-release/npm": "^13.1.5",
     "husky": "^9.1.7",
     "semantic-release": "^25.0.3"
+  },
+  "overrides": {
+    "vite": "^6.0.0"
   }
 }

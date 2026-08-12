@@ -10,8 +10,8 @@ export const ThemeDropdownOptions = [
   {
     name: 'default',
     displayName: 'Default',
-    primaryColor: 'hsl(264, 100%, 50%)',
-    secondaryColor: 'hsl(300, 100%, 50%)',
+    primaryColor: 'hsl(0, 0%, 10.2%)',
+    secondaryColor: 'hsl(0, 0%, 33.3%)',
   },
   {
     name: 'ocean',

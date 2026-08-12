@@ -19,6 +19,13 @@ const showThemeDropdown = import.meta.env.PUBLIC_SHOW_THEME_MENU === 'true';
 
             <ThemeButton className="Fade_In" />
 
+            <button
+                id="lang-toggle-mobile"
+                class="Fade_In px-2 py-1 text-xs font-bold border border-primary rounded-sm hover:bg-primary hover:text-background transition-colors duration-200"
+                aria-label="Switch language"
+                data-i18n-btn
+            >EN</button>
+
             <button id="Ham_Menu" aria-label="Toggle Menu">
                 <svg
                     viewBox="20 20 60 60"
@@ -52,19 +59,19 @@ const showThemeDropdown = import.meta.env.PUBLIC_SHOW_THEME_MENU === 'true';
         <div class="absolute inset-0 bg-background/50 backdrop-blur -z-10"></div>
 
         <div class="MobileHeader_Nav flex_center opacity-0 translate-y-4">
-            <a href="#about">About</a>
+            <a href="#about" data-i18n="nav_about_mobile">À Propos</a>
         </div>
 
         <div class="MobileHeader_Nav flex_center opacity-0 translate-y-4">
-            <a href="#skills">Skills</a>
+            <a href="#skills" data-i18n="nav_skills_mobile">Compétences</a>
         </div>
 
         <div class="MobileHeader_Nav flex_center opacity-0 translate-y-4">
-            <a href="#projects">Projects</a>
+            <a href="#projects" data-i18n="nav_projects_mobile">Projets</a>
         </div>
 
         <div class="MobileHeader_Nav flex_center opacity-0 translate-y-4">
-            <a href="#contact">Contact</a>
+            <a href="#contact" data-i18n="nav_contact_mobile">Contact</a>
         </div>
 
         <div class="MobileHeader_Nav flex_center opacity-0 translate-y-4">
