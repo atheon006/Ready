@@ -1,58 +1,32 @@
 {
-  "name": "portfolio",
+  "name": "readykalonda-portfolio",
   "type": "module",
-  "version": "2.0.0",
-  "homepage": "https://github.com/ChiragChrg/portfolio",
+  "version": "3.0.0",
+  "homepage": "https://readykalonda.vercel.app",
   "author": {
-    "name": "ChiragChrg",
-    "email": "chiruchirag2001@gmail.com",
-    "url": "https://chiragchrg.netlify.app/"
+    "name": "Ready Kalonda (Athéon)",
+    "email": "readykalonda38@gmail.com",
+    "url": "https://readykalonda.vercel.app"
   },
   "scripts": {
-    "dev": "npm run build:themes && astro dev --host",
-    "start": "npm run build:themes && astro dev",
-    "build:themes": "npx --yes tsx scripts/generateThemes.ts",
-    "build": "npm run build:themes && astro build",
+    "dev": "astro dev --host",
+    "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro",
-    "lint": "eslint .",
-    "prepare": "husky",
-    "release": "semantic-release",
-    "release:dry": "semantic-release --dry-run"
+    "check": "astro check",
+    "astro": "astro"
   },
   "dependencies": {
     "@astrojs/check": "0.9.9",
-    "@astrojs/preact": "5.1.2",
-    "@emailjs/browser": "^4.4.1",
-    "@studio-freight/lenis": "^1.0.42",
+    "@fontsource-variable/geist": "^5.3.0",
+    "@fontsource-variable/geist-mono": "^5.3.0",
     "@tailwindcss/vite": "^4.2.4",
     "astro": "6.2.1",
-    "astro-compress": "^2.4.1",
-    "astro-font": "^1.1.0",
     "astro-seo": "^1.1.0",
-    "gsap": "^3.15.0",
-    "lucide-preact": "^1.14.0",
-    "nanostores": "^1.3.0",
-    "preact": "^10.29.1",
     "tailwindcss": "^4.2.4",
     "typescript": "^6.0.3"
   },
-  "devDependencies": {
-    "@typescript-eslint/parser": "^8.59.1",
-    "eslint": "^10.3.0",
-    "eslint-plugin-astro": "^1.7.0",
-    "ts-node": "^10.9.2",
-    "typescript-eslint": "^8.59.1",
-    "@commitlint/cli": "^20.5.3",
-    "@commitlint/config-conventional": "^20.5.3",
-    "@semantic-release/changelog": "^6.0.3",
-    "@semantic-release/git": "^10.0.1",
-    "@semantic-release/github": "^12.0.6",
-    "@semantic-release/npm": "^13.1.5",
-    "husky": "^9.1.7",
-    "semantic-release": "^25.0.3"
-  },
   "overrides": {
     "vite": "^6.0.0"
-  }
+  },
+  "description": "Portfolio de Ready Kalonda (Athéon), développeur web, mobile et systèmes à Goma (RDC)."
 }

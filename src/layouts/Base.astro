@@ -1,0 +1,158 @@
+---
+import { SEO } from 'astro-seo';
+import Footer from '@components/Footer.astro';
+import Header from '@components/Header.astro';
+import type { Bi } from '@/data/i18n';
+import { profile, site } from '@/data/profile';
+import '@styles/global.css';
+
+interface Props {
+  title?: Bi;
+  description?: Bi;
+  home?: boolean;
+  image?: string;
+}
+const { title = site.title, description = site.description, home = true, image = '/og.png' } = Astro.props;
+const canonical = new URL(Astro.url.pathname, site.url).toString();
+const ogImage = new URL(image, site.url).toString();
+
+const person = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: profile.name,
+  alternateName: profile.alias,
+  url: site.url,
+  jobTitle: profile.role.fr,
+  address: { '@type': 'PostalAddress', addressLocality: 'Goma', addressCountry: 'CD' },
+  sameAs: profile.links.filter((l) => l.url.startsWith('http')).map((l) => l.url),
+};
+---
+
+<!doctype html>
+<html lang="fr" data-lang="fr" data-title-fr={title.fr} data-title-en={title.en}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#09090b" />
+    <meta name="color-scheme" content="dark" />
+    <script is:inline>
+      // Langue choisie (ou celle du navigateur) appliquée avant l'affichage, sans clignotement.
+      (function () {
+        var d = document.documentElement;
+        var l = 'fr';
+        try {
+          l = localStorage.getItem('lang') || ((navigator.language || 'fr').toLowerCase().indexOf('fr') === 0 ? 'fr' : 'en');
+        } catch (e) {}
+        d.dataset.lang = l;
+        d.lang = l;
+        d.classList.add('js');
+      })();
+    </script>
+    <SEO
+      title={title.fr}
+      description={description.fr}
+      canonical={canonical}
+      openGraph={{
+        basic: { title: title.fr, type: 'website', image: ogImage, url: canonical },
+        optional: { description: description.fr, locale: 'fr_FR', localeAlternate: ['en_US'], siteName: `${profile.name} (${profile.alias})` },
+        image: { alt: `${profile.name} — ${profile.role.fr}`, width: 1200, height: 630 },
+      }}
+      twitter={{ card: 'summary_large_image', title: title.fr, description: description.fr, image: ogImage }}
+      extend={{
+        link: [
+          { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
+          { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' },
+          { rel: 'manifest', href: '/manifest.webmanifest' },
+        ],
+        meta: [{ name: 'author', content: `${profile.name} (${profile.alias})` }],
+      }}
+    />
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(person)} />
+  </head>
+
+  <body class="grain">
+    <a href="#contenu" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[70] focus:rounded-full focus:bg-fg focus:px-4 focus:py-2 focus:text-bg">
+      <span data-i18n="fr">Aller au contenu</span><span data-i18n="en">Skip to content</span>
+    </a>
+    <Header home={home} />
+    <main id="contenu">
+      <slot />
+    </main>
+    <Footer />
+
+    <script>
+      const root = document.documentElement;
+
+      // Langue
+      const syncTitle = () => {
+        const t = root.dataset.lang === 'en' ? root.dataset.titleEn : root.dataset.titleFr;
+        if (t) document.title = t;
+        document.querySelectorAll<HTMLImageElement>('img[data-alt-en]').forEach((img) => {
+          img.dataset.altFr ??= img.alt;
+          img.alt = (root.dataset.lang === 'en' ? img.dataset.altEn : img.dataset.altFr) ?? img.alt;
+        });
+      };
+      syncTitle();
+      document.querySelectorAll('[data-lang-toggle]').forEach((btn) =>
+        btn.addEventListener('click', () => {
+          const next = root.dataset.lang === 'en' ? 'fr' : 'en';
+          root.dataset.lang = next;
+          root.lang = next;
+          try {
+            localStorage.setItem('lang', next);
+          } catch {
+            /* stockage indisponible : la langue ne sera pas retenue */
+          }
+          syncTitle();
+        }),
+      );
+
+      // Apparitions au défilement
+      const items = document.querySelectorAll('[data-reveal]');
+      if ('IntersectionObserver' in window) {
+        const io = new IntersectionObserver(
+          (entries) => {
+            for (const e of entries) {
+              if (e.isIntersecting) {
+                e.target.classList.add('is-visible');
+                io.unobserve(e.target);
+              }
+            }
+          },
+          { rootMargin: '0px 0px -8% 0px', threshold: 0.08 },
+        );
+        items.forEach((el) => io.observe(el));
+      } else {
+        items.forEach((el) => el.classList.add('is-visible'));
+      }
+
+      // En-tête : fond dès qu'on fait défiler
+      const header = document.querySelector('[data-header]');
+      const onScroll = () => header?.toggleAttribute('data-scrolled', window.scrollY > 12);
+      onScroll();
+      window.addEventListener('scroll', onScroll, { passive: true });
+
+      // Menu mobile : se ferme après un choix
+      document.querySelectorAll('[data-menu] a').forEach((a) =>
+        a.addEventListener('click', () => a.closest('details')?.removeAttribute('open')),
+      );
+
+      // Copier l'adresse e-mail
+      document.querySelectorAll<HTMLButtonElement>('[data-copy]').forEach((btn) =>
+        btn.addEventListener('click', async () => {
+          try {
+            await navigator.clipboard.writeText(btn.dataset.copy ?? '');
+            btn.querySelector('[data-copy-label]')?.setAttribute('hidden', '');
+            btn.querySelector('[data-copy-done]')?.removeAttribute('hidden');
+            setTimeout(() => {
+              btn.querySelector('[data-copy-label]')?.removeAttribute('hidden');
+              btn.querySelector('[data-copy-done]')?.setAttribute('hidden', '');
+            }, 2200);
+          } catch {
+            window.location.href = `mailto:${btn.dataset.copy}`;
+          }
+        }),
+      );
+    </script>
+  </body>
+</html>

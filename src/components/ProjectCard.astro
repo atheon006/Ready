@@ -1,0 +1,41 @@
+---
+import { Image } from 'astro:assets';
+import type { Project } from '@/data/projects';
+import Arrow from './Arrow.astro';
+import StatusBadge from './StatusBadge.astro';
+import T from './T.astro';
+
+interface Props {
+  project: Project;
+}
+const { project: p } = Astro.props;
+---
+
+<article class="group relative flex flex-col overflow-hidden rounded-[22px] border border-line bg-elev transition-colors hover:border-line-strong" data-reveal>
+  <div class="overflow-hidden border-b border-line">
+    <Image
+      src={p.cover}
+      alt={p.coverAlt.fr}
+      widths={[480, 720, 960]}
+      sizes="(min-width: 1024px) 24rem, (min-width: 640px) 46vw, 94vw"
+      class="aspect-[16/10] w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+    />
+  </div>
+  <div class="flex flex-1 flex-col p-6">
+    <div class="flex items-center justify-between gap-3">
+      <h3 class="text-lg font-semibold tracking-tight">
+        <a href={`/projects/${p.slug}`} class="after:absolute after:inset-0">{p.name}</a>
+      </h3>
+      <StatusBadge status={p.status} />
+    </div>
+    <p class="mt-1 text-sm text-dim"><T t={p.type} /></p>
+    <p class="mt-4 flex-1 text-[15px] leading-relaxed text-muted"><T t={p.tagline} /></p>
+    <p class="mt-5 flex flex-wrap gap-x-3 gap-y-1 font-mono text-xs text-dim">
+      {p.stack.map((t) => <span>{t.name}</span>)}
+    </p>
+    <span class="mt-6 inline-flex items-center gap-1.5 text-sm text-fg/80 transition-colors group-hover:text-accent-ink" aria-hidden="true">
+      <T t={{ fr: 'Voir le projet', en: 'View project' }} />
+      <Arrow class="size-4 transition-transform group-hover:translate-x-0.5" />
+    </span>
+  </div>
+</article>

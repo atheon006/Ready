@@ -1,0 +1,18 @@
+---
+import Arrow from '@components/Arrow.astro';
+import T from '@components/T.astro';
+import { bi, ui } from '@/data/i18n';
+import Base from '@layouts/Base.astro';
+---
+
+<Base title={bi('Page introuvable — Ready Kalonda', 'Page not found — Ready Kalonda')} home={false}>
+  <section class="container-page flex min-h-[70vh] flex-col justify-center pt-24">
+    <p class="font-mono text-sm text-accent-ink">404</p>
+    <h1 class="mt-4 text-5xl font-semibold tracking-tight md:text-6xl"><T t={ui.notFound.title} /></h1>
+    <p class="mt-4 text-lg text-muted"><T t={ui.notFound.text} /></p>
+    <a href="/" class="mt-10 inline-flex w-fit items-center gap-2 rounded-full bg-fg px-5 py-2.5 text-sm font-medium text-bg">
+      <Arrow dir="left" />
+      <T t={ui.notFound.home} />
+    </a>
+  </section>
+</Base>

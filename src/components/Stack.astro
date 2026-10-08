@@ -1,0 +1,28 @@
+---
+import { ui } from '@/data/i18n';
+import { stackGroups } from '@/data/stack';
+import T from './T.astro';
+import TechChip from './TechChip.astro';
+---
+
+<section id="stack" class="container-page py-20 md:py-28" aria-labelledby="stack-title">
+  <div class="max-w-2xl" data-reveal>
+    <p class="eyebrow"><T t={ui.stack.eyebrow} /></p>
+    <h2 id="stack-title" class="mt-4 text-4xl font-semibold tracking-[-0.03em] text-balance md:text-5xl"><T t={ui.stack.title} /></h2>
+  </div>
+
+  <div class="mt-14 grid gap-px overflow-hidden rounded-[24px] border border-line bg-line sm:grid-cols-2 lg:grid-cols-3">
+    {
+      stackGroups.map((g, i) => (
+        <div class="bg-bg p-7" data-reveal style={`--reveal-delay: ${i * 60}ms`}>
+          <h3 class="font-mono text-xs tracking-[0.14em] text-dim uppercase">
+            <T t={g.title} />
+          </h3>
+          <ul class="mt-5 flex flex-wrap gap-2">
+            {g.items.map((t) => <TechChip tech={t} size="md" />)}
+          </ul>
+        </div>
+      ))
+    }
+  </div>
+</section>

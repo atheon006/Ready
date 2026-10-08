@@ -1,22 +1,16 @@
 ---
-import { Layout } from '@layouts/index';
-import { Hero, About, Skills, Projects, Contact } from '@components/index';
-
-const { themeConfig, siteConfig, headerConfig, heroConfig, aboutConfig, footerConfig } =
-    await import('@/config/portfolio.config');
+import About from '@components/About.astro';
+import Contact from '@components/Contact.astro';
+import Hero from '@components/Hero.astro';
+import Stack from '@components/Stack.astro';
+import Work from '@components/Work.astro';
+import Base from '@layouts/Base.astro';
 ---
 
-<Layout
-    config={{
-        theme: themeConfig,
-        site: siteConfig,
-        header: headerConfig,
-        footer: footerConfig,
-    }}
->
-    <Hero config={heroConfig} />
-    <About config={aboutConfig} />
-    <Skills />
-    <Projects />
-    <Contact />
-</Layout>
+<Base>
+  <Hero />
+  <Work />
+  <About />
+  <Stack />
+  <Contact />
+</Base>

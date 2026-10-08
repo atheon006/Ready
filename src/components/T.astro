@@ -1,0 +1,21 @@
+---
+import type { Bi } from '@/data/i18n';
+
+interface Props {
+  t: Bi;
+}
+const { t } = Astro.props;
+// Typographie française : espace insécable avant ? ! : ; (le signe ne passe jamais seul à la ligne).
+const fr = t.fr.replace(/ ([?!:;])/g, ' $1');
+---
+
+{
+  t.fr === t.en ? (
+    <Fragment>{fr}</Fragment>
+  ) : (
+    <>
+      <span data-i18n="fr" lang="fr">{fr}</span>
+      <span data-i18n="en" lang="en">{t.en}</span>
+    </>
+  )
+}

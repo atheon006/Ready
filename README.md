@@ -1,87 +1,67 @@
-<<<<<<< HEAD
-[![Netlify Status](https://api.netlify.com/api/v1/badges/530c2667-5dbc-4df3-824c-de37f975c833/deploy-status)](https://app.netlify.com/sites/chiragchrg/deploys)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+# Ready Kalonda (Athéon) — Portfolio
 
-##### Created : 09/04/2023
+Développeur web, mobile et systèmes à Goma (RD Congo). Ce dépôt contient le code de mon portfolio.
 
-# ChiragChrg | My Personal Portfolio | Fullstack Web Developer
-Welcome to ChiragChrg's portfolio website, your gateway to the dynamic world of full stack web development. Immerse yourself in the digital realm where my expertise in coding and design converges to create extraordinary online experiences.
+**Site : [readykalonda.vercel.app](https://readykalonda.vercel.app)** · français et anglais
 
-## 💻 Preview
-![Portfolio Preview](public/Mockup_Preview.png)
+![Accueil du portfolio](docs/apercu-accueil.webp)
 
-## 🚀 Live Demo  
-Check out the current live version of the portfolio:  
-👉 **https://chiragchrg.netlify.app**
+## Projets présentés
 
-Preview the upcoming version here (Nightly Build - [astro branch](https://github.com/ChiragChrg/Portfolio/tree/astro)):  
-👉 **https://chiragchrg-nightly.netlify.app/**
+| Projet | Description | En ligne | Code |
+| --- | --- | --- | --- |
+| **ATLAS** | Marketplace des boutiques vérifiées de Goma : paiement bloqué jusqu'à la livraison, app Flutter, espace d'administration | [Marketplace](https://atlas-web-portal.vercel.app) · [Démo](https://atlas-web-psi-pied.vercel.app) | Privé |
+| **ParentEcole** | Suivi scolaire entre l'école et les parents : app Android et web, site de gestion de l'école | [Parents](https://parentecole.web.app) · [École](https://parentecole-app.web.app) | [ecoleparent](https://github.com/atheon006/ecoleparent) |
+| **EduTrack** | Gestion scolaire multiplateforme en Flutter (Android et PWA) | [copa-ecole.web.app](https://copa-ecole.web.app) | [EduTrack-2.2](https://github.com/atheon006/EduTrack-2.2) |
+| Portfolio v1 | Première version de ce portfolio (Vite, GSAP) | [portfolioready.vercel.app](https://portfolioready.vercel.app) | [portfolio-Ready-du-copa](https://github.com/atheon006/portfolio-Ready-du-copa) |
+| ARENA | Prototype Angular connecté à l'API Gemini | — | [ARENA-V3](https://github.com/atheon006/ARENA-V3) |
+| Shinobi no Sato | Quiz et duels pour fans d'anime (React, Firebase, Gemini) | — | Privé |
 
-### 🚧 Nightly Build in Progress  
-A fresh version is under active development—this isn’t just a revamp but a more extensible architecture designed for quick personalization:
+Les visuels des projets sont de vraies captures des sites en ligne.
 
-- **Templatized Setup** – Fork and adapt your own version in minutes.
-- **Custom Theme System** – Try different themes (with light/dark variants) using a theme selection dropdown—**available only in the nightly build for preview purposes.**
-- **Production Behavior** – In the stable version, the theme dropdown is disabled; a single static theme is used based on your choice in `src/config/portfolio.config.ts`.
-- **Quality Enhancements** – Performance boosts and UI refinements all around.
+<p>
+  <img src="docs/apercu-projet.webp" alt="Page d'un projet" width="72%">
+  &nbsp;
+  <img src="docs/apercu-mobile.webp" alt="Le portfolio sur téléphone" width="24%">
+</p>
 
-<br/>
+## Le site
 
-## 📚 Tools and Tech Stack
+- **Astro** : pages statiques, aucun JavaScript inutile, images optimisées automatiquement (AVIF/WebP, tailles adaptées).
+- **Tailwind CSS 4**, polices **Geist** et **Geist Mono**, thème sombre.
+- **Bilingue FR/EN** : chaque texte existe dans les deux langues. La langue suit celle du navigateur, et le choix est mémorisé.
+- **Une page par projet** : contexte, points forts, technologies et captures.
+- **Accessible** : navigation au clavier, contrastes vérifiés, animations désactivées si le système le demande.
+- **Référencement** : balises Open Graph, image de partage, données structurées, plan du site généré.
 
-The portfolio leverages the following technologies:
-<div align="center">
-      <a href="https://astro.build/" title="Astro"><img src="https://skillicons.dev/icons?i=astro" alt="Astro" width="40"/></a>&emsp;
-      <a href="https://preactjs.com/" title="Preact.js"><img src="https://raw.githubusercontent.com/ChiragChrg/ChiragChrg.github.io/main/icons/preactjs.svg" alt="Preact.js" width="40"/></a>&emsp;
-      <a href="https://www.typescriptlang.org/docs/" title="TypeScript"><img src="https://skillicons.dev/icons?i=typescript" alt="TypeScript" width="40"/></a>&emsp;
-      <a href="https://tailwindcss.com/docs/installation" title="TailwindCSS"><img src="https://skillicons.dev/icons?i=tailwind" alt="TailwindCSS" width="40"/></a>&emsp;
-      <a href="https://greensock.com/docs/" title="GSAP"><img src="https://raw.githubusercontent.com/ChiragChrg/ChiragChrg.github.io/main/icons/gsap.svg" alt="GSAP" width="40"/></a>&emsp;
-</div>
+## Structure
 
-## 🗼 LightHouse Audit
-![LightHouse Audit Preview](public/LightHouse_Audit.jpg)
+```
+src/
+  data/          contenu du site : profil, projets, compétences, libellés FR/EN
+  components/    sections de la page (Hero, Work, About, Stack, Contact…)
+  layouts/       gabarit commun (balises, langue, animations)
+  pages/         accueil, page de chaque projet, 404, sitemap.xml
+  assets/        portrait, visuels des projets, icônes des technologies
+public/          icônes du site, image de partage, robots.txt
+```
 
-## 🛠️ Installation and Setup
+Pour ajouter ou modifier un projet, il suffit d'éditer `src/data/projects.ts`.
 
-Follow these steps to run the project locally:
+## Lancer en local
 
-### Steps
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/ChiragChrg/portfolio.git
-   ```
-2. Navigate to the project directory:
-   ```bash
-   cd portfolio
-   ```
-3. Install dependencies:
-   ```bash
-   npm install
-   ```
-4. Start the development server:
-   ```bash
-   npm run dev
-   ```
+```bash
+npm install
+npm run dev       # http://localhost:4321
+npm run build     # site statique dans dist/
+npm run check     # vérification des types
+```
 
-## 🌟 Features
+Le site est déployé sur Vercel à chaque push sur `main`.
 
-- **Optimized Performance**: Built with Astro for lightning-fast load times.
-- **Responsive Design**: Tailored for all devices using TailwindCSS.
-- **Interactive Animations**: Powered by GSAP for smooth transitions.
-- **SEO Friendly**: Enhanced visibility with Astro SEO integration.
-- **Dynamic Components**: Utilizes Preact for modular and reusable UI elements.
+## Crédits
 
-## 📄 License
+- Ce dépôt est parti du modèle de portfolio de [ChiragChrg](https://github.com/ChiragChrg/Portfolio) (licence MIT), entièrement redessiné et réécrit depuis.
+- Icônes des technologies : [Simple Icons](https://simpleicons.org) (CC0).
 
-This project is licensed under the [MIT License](LICENSE).  
-You may use, copy, modify, and distribute this project for any purpose, provided that you:
-
-- Include the original copyright.
-- Retain the MIT license in all copies or substantial portions of the software.
-
-Attribution is appreciated but not required. If you use this project, consider giving visible credit is given to **[ChiragChrg](https://github.com/ChiragChrg)** somewhere within your project (e.g., in the README, footer, or documentation).
-
-Proper attribution helps acknowledge the effort invested in this project and upholds the values of integrity, transparency, and the open‑source community.
-=======
-# Ready
->>>>>>> 1587ca8f1f8894d3e577eb2bfd0ecab48e038988
+Licence MIT, voir [LICENSE](LICENSE).

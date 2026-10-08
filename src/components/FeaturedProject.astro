@@ -1,0 +1,66 @@
+---
+import { Image } from 'astro:assets';
+import { ui } from '@/data/i18n';
+import type { Project } from '@/data/projects';
+import Arrow from './Arrow.astro';
+import StatusBadge from './StatusBadge.astro';
+import T from './T.astro';
+import TechChip from './TechChip.astro';
+
+interface Props {
+  project: Project;
+  index: number;
+}
+const { project: p, index } = Astro.props;
+const flip = index % 2 === 1;
+const primary = p.links[0];
+---
+
+<article class="grid items-center gap-8 lg:grid-cols-12 lg:gap-14" data-reveal>
+  <a
+    href={`/projects/${p.slug}`}
+    class:list={['group relative block overflow-hidden rounded-[24px] border border-line bg-elev lg:col-span-7', flip && 'lg:order-last']}
+    style={`--accent-p: ${p.accent}`}
+    aria-label={`${p.name}`}
+  >
+    <Image
+      src={p.cover}
+      alt={p.coverAlt.fr}
+      widths={[640, 960, 1280, 1600]}
+      sizes="(min-width: 1024px) 44rem, 94vw"
+      class="h-auto w-full transition-transform duration-700 ease-out group-hover:scale-[1.025]"
+    />
+    <span class="pointer-events-none absolute inset-0 rounded-[24px] ring-1 ring-inset ring-white/5"></span>
+  </a>
+
+  <div class="lg:col-span-5">
+    <div class="flex items-center gap-3">
+      {p.logo && <Image src={p.logo} alt="" width={40} height={40} class="size-10 rounded-xl" />}
+      <span class="font-mono text-xs tracking-wider text-dim uppercase">0{index + 1} · {p.year}</span>
+    </div>
+    <h3 class="mt-5 text-3xl font-semibold tracking-tight md:text-4xl">{p.name}</h3>
+    <p class="mt-2 text-sm text-muted"><T t={p.type} /></p>
+    <p class="mt-5 text-xl leading-snug text-balance text-fg"><T t={p.tagline} /></p>
+    <p class="mt-4 leading-relaxed text-pretty text-muted"><T t={p.summary} /></p>
+
+    <ul class="mt-6 flex flex-wrap gap-2" aria-label="Technologies">
+      {p.stack.map((t) => <TechChip tech={t} />)}
+    </ul>
+
+    <div class="mt-8 flex flex-wrap items-center gap-3">
+      <a href={`/projects/${p.slug}`} class="group inline-flex items-center gap-2 rounded-full bg-fg px-5 py-2.5 text-sm font-medium text-bg transition-opacity hover:opacity-85">
+        <T t={ui.work.caseStudy} />
+        <Arrow class="size-4 transition-transform group-hover:translate-x-0.5" />
+      </a>
+      {
+        primary && (
+          <a href={primary.url} target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-2 rounded-full border border-line-strong px-5 py-2.5 text-sm font-medium transition-colors hover:bg-white/[0.05]">
+            <T t={ui.work.visit} />
+            <Arrow dir="up-right" class="size-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+          </a>
+        )
+      }
+      <StatusBadge status={p.status} />
+    </div>
+  </div>
+</article>

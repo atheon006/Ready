@@ -1,0 +1,179 @@
+---
+import { Image } from 'astro:assets';
+import Arrow from '@components/Arrow.astro';
+import StatusBadge from '@components/StatusBadge.astro';
+import T from '@components/T.astro';
+import TechChip from '@components/TechChip.astro';
+import { bi, ui } from '@/data/i18n';
+import { projects, type Project } from '@/data/projects';
+import Base from '@layouts/Base.astro';
+
+export function getStaticPaths() {
+  return projects.map((project, i) => ({
+    params: { slug: project.slug },
+    props: { project, next: projects[(i + 1) % projects.length] },
+  }));
+}
+
+interface Props {
+  project: Project;
+  next: Project;
+}
+const { project: p, next } = Astro.props;
+const desktopShots = p.shots.filter((s) => s.kind === 'desktop');
+const mobileShots = p.shots.filter((s) => s.kind === 'mobile');
+---
+
+<Base
+  title={bi(`${p.name} — ${p.tagline.fr} · Ready Kalonda`, `${p.name} — ${p.tagline.en} · Ready Kalonda`)}
+  description={p.summary}
+  home={false}
+  image={p.cover.src}
+>
+  <article class="container-page pt-28 md:pt-36">
+    <a href="/#work" class="group inline-flex items-center gap-2 text-sm text-muted transition-colors hover:text-fg">
+      <Arrow dir="left" class="size-4 transition-transform group-hover:-translate-x-0.5" />
+      <T t={ui.project.back} />
+    </a>
+
+    <header class="mt-10 grid gap-10 lg:grid-cols-12" data-reveal>
+      <div class="lg:col-span-8">
+        <div class="flex items-center gap-3">
+          {p.logo && <Image src={p.logo} alt="" width={44} height={44} class="size-11 rounded-xl" />}
+          <span class="eyebrow"><T t={p.type} /></span>
+        </div>
+        <h1 class="mt-6 text-5xl font-semibold tracking-[-0.04em] md:text-7xl">{p.name}</h1>
+        <p class="mt-5 max-w-2xl text-2xl leading-snug text-balance text-muted"><T t={p.tagline} /></p>
+      </div>
+      <dl class="grid grid-cols-2 gap-6 self-end border-t border-line pt-6 text-sm lg:col-span-4 lg:grid-cols-1 lg:border-t-0 lg:border-l lg:pt-0 lg:pl-8">
+        <div>
+          <dt class="font-mono text-xs tracking-wider text-dim uppercase"><T t={ui.project.role} /></dt>
+          <dd class="mt-1.5"><T t={p.role} /></dd>
+        </div>
+        <div>
+          <dt class="font-mono text-xs tracking-wider text-dim uppercase"><T t={ui.project.year} /></dt>
+          <dd class="mt-1.5">{p.year}</dd>
+        </div>
+        <div>
+          <dt class="font-mono text-xs tracking-wider text-dim uppercase"><T t={ui.project.status} /></dt>
+          <dd class="mt-1.5"><StatusBadge status={p.status} /></dd>
+        </div>
+        <div>
+          <dt class="font-mono text-xs tracking-wider text-dim uppercase"><T t={ui.project.links} /></dt>
+          <dd class="mt-1.5 flex flex-col gap-1.5">
+            {
+              p.links.map((l) => (
+                <a href={l.url} target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-1.5 hover:text-accent-ink">
+                  <T t={l.label} />
+                  <Arrow dir="up-right" class="size-3.5 opacity-70" />
+                </a>
+              ))
+            }
+            {
+              p.source ? (
+                <a href={p.source} target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-1.5 hover:text-accent-ink">
+                  <T t={ui.work.code} />
+                  <Arrow dir="up-right" class="size-3.5 opacity-70" />
+                </a>
+              ) : (
+                <span class="text-dim">
+                  <T t={ui.work.privateCode} />
+                </span>
+              )
+            }
+          </dd>
+        </div>
+      </dl>
+    </header>
+
+    <div class="mt-14 overflow-hidden rounded-[28px] border border-line bg-elev" data-reveal>
+      <Image
+        src={p.cover}
+        alt={p.coverAlt.fr}
+        data-alt-en={p.coverAlt.en}
+        widths={[800, 1200, 1600]}
+        sizes="(min-width: 1216px) 72rem, 96vw"
+        class="h-auto w-full"
+        loading="eager"
+      />
+    </div>
+
+    <div class="mt-20 grid gap-14 lg:grid-cols-12">
+      <section class="lg:col-span-7" data-reveal aria-labelledby="overview">
+        <h2 id="overview" class="font-mono text-xs tracking-[0.14em] text-dim uppercase"><T t={ui.project.overview} /></h2>
+        <div class="mt-6 space-y-5 text-lg leading-relaxed text-pretty text-muted">
+          {p.description.map((d) => <p><T t={d} /></p>)}
+        </div>
+        {
+          p.note && (
+            <p class="mt-8 rounded-2xl border border-line bg-white/[0.02] px-5 py-4 text-[15px] leading-relaxed text-muted">
+              <T t={p.note} />
+            </p>
+          )
+        }
+      </section>
+
+      <aside class="space-y-12 lg:col-span-4 lg:col-start-9" data-reveal style="--reveal-delay: 120ms">
+        <section aria-labelledby="highlights">
+          <h2 id="highlights" class="font-mono text-xs tracking-[0.14em] text-dim uppercase"><T t={ui.project.highlights} /></h2>
+          <ul class="mt-6 space-y-3">
+            {
+              p.highlights.map((h) => (
+                <li class="flex gap-3 text-[15px] leading-relaxed">
+                  <span class="mt-2 size-1.5 shrink-0 rounded-full bg-accent" aria-hidden="true" />
+                  <span>
+                    <T t={h} />
+                  </span>
+                </li>
+              ))
+            }
+          </ul>
+        </section>
+        <section aria-labelledby="tech">
+          <h2 id="tech" class="font-mono text-xs tracking-[0.14em] text-dim uppercase"><T t={ui.project.stack} /></h2>
+          <ul class="mt-6 flex flex-wrap gap-2">
+            {p.stack.map((t) => <TechChip tech={t} size="md" />)}
+          </ul>
+        </section>
+      </aside>
+    </div>
+
+    {
+      p.shots.length > 0 && (
+        <section class="mt-24" aria-labelledby="gallery">
+          <h2 id="gallery" class="font-mono text-xs tracking-[0.14em] text-dim uppercase" data-reveal>
+            <T t={ui.project.gallery} />
+          </h2>
+          <div class:list={['mt-8 grid gap-6', mobileShots.length > 0 && 'lg:grid-cols-[1fr_auto]']}>
+            <div class="space-y-6">
+              {desktopShots.map((s) => (
+                <figure class="overflow-hidden rounded-[20px] border border-line bg-elev" data-reveal>
+                  <Image src={s.image} alt={s.alt.fr} data-alt-en={s.alt.en} widths={[800, 1200, 1600]} sizes="(min-width: 1024px) 52rem, 96vw" class="h-auto w-full" />
+                </figure>
+              ))}
+            </div>
+            {mobileShots.length > 0 && (
+              <div class="flex justify-center gap-6 lg:flex-col lg:justify-start">
+                {mobileShots.map((s) => (
+                  <figure class="w-full max-w-[300px] overflow-hidden rounded-[36px] border-[6px] border-[#1a1a1e] bg-elev shadow-2xl ring-1 ring-line" data-reveal>
+                    <Image src={s.image} alt={s.alt.fr} data-alt-en={s.alt.en} widths={[300, 600]} sizes="300px" class="h-auto w-full" />
+                  </figure>
+                ))}
+              </div>
+            )}
+          </div>
+        </section>
+      )
+    }
+
+    <nav class="mt-28 mb-24 border-t border-line pt-10" aria-label={ui.project.next.fr}>
+      <a href={`/projects/${next.slug}`} class="group flex items-end justify-between gap-6">
+        <span>
+          <span class="block font-mono text-xs tracking-[0.14em] text-dim uppercase"><T t={ui.project.next} /></span>
+          <span class="mt-3 block text-3xl font-semibold tracking-tight transition-colors group-hover:text-accent-ink md:text-5xl">{next.name}</span>
+        </span>
+        <Arrow class="mb-2 size-8 transition-transform group-hover:translate-x-1" />
+      </a>
+    </nav>
+  </article>
+</Base>

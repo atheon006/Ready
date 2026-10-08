@@ -1,0 +1,19 @@
+---
+import type { Tech } from '@/data/stack';
+
+interface Props {
+  tech: Tech;
+  size?: 'sm' | 'md';
+}
+const { tech, size = 'sm' } = Astro.props;
+---
+
+<li
+  class:list={[
+    'inline-flex items-center gap-2 rounded-full border border-line bg-white/[0.03] text-muted',
+    size === 'sm' ? 'px-3 py-1 text-[13px]' : 'px-3.5 py-2 text-sm',
+  ]}
+>
+  {tech.icon && <span class:list={['tech-icon shrink-0', size === 'sm' ? 'size-3.5' : 'size-4']} aria-hidden="true" set:html={tech.icon} />}
+  {tech.name}
+</li>

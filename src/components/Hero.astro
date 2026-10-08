@@ -1,93 +1,96 @@
 ---
-import { Image } from "astro:assets";
-
-const { config } = Astro.props;
+import { Image } from 'astro:assets';
+import { ui } from '@/data/i18n';
+import { profile } from '@/data/profile';
+import Arrow from './Arrow.astro';
+import T from './T.astro';
 ---
 
-<section
-    id="Hero"
-    class="w-full h-[calc(100vh-4rem)] py-4 bg-background flex justify-evenly lg:justify-around items-center flex-col-reverse lg:flex-row overflow-hidden"
->
-    <!-- Hero Intro Info -->
-    <div class="w-full lg:w-fit flex justify-start items-center flex-col gap-8">
-        <div class="text-[18px] lg:text-[26px] text-center lg:text-left">
-            <p class="Fade_Stagger">{config.salutation}</p>
-            <h1
-                class="Fade_Stagger gradientText font-ubuntu text-[4em] lg:text-[9rem] leading-tight max-w-xs md:max-w-6xl"
-            >
-                {config.firstName}
-                {" " + config.lastName}
-            </h1>
-            <p class="Fade_Stagger">I'm a {config.position}.</p>
-            <p class="Fade_Stagger">
-                {config.tagLine.prefixText}
-                <span class="gradientText font-ubuntu">
-                    {config.tagLine.highlightedText}
-                </span>
-                {config.tagLine.suffixText}
-            </p>
-        </div>
+<section class="container-page pt-32 pb-16 md:pt-40 md:pb-24">
+  <div class="grid items-center gap-12 lg:grid-cols-[1.35fr_0.65fr] lg:gap-16">
+    <div>
+      <p class="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-muted" data-reveal>
+        <span class="inline-flex items-center gap-2 rounded-full border border-line bg-white/[0.03] px-3 py-1">
+          <span class="relative flex size-2" aria-hidden="true">
+            <span class="absolute inline-flex size-full animate-ping rounded-full bg-ok/60 motion-reduce:animate-none"></span>
+            <span class="relative inline-flex size-2 rounded-full bg-ok"></span>
+          </span>
+          <T t={profile.availability} />
+        </span>
+        <span class="font-mono text-xs tracking-wider text-dim uppercase"><T t={profile.location} /></span>
+      </p>
 
-        <div
-            class="Fade_Stagger flex justify-center lg:justify-start items-center w-full gap-10 py-4 text-socialIconColor!"
-        >
-            {
-                config.links &&
-                    config.links.map(
-                        (link: {
-                            label: string;
-                            url: string;
-                            icon: string;
-                        }) => (
-                            <a
-                                href={link.url}
-                                title={link.label}
-                                aria-label={link.label}
-                                target="_blank"
-                                rel="noreferrer"
-                                class="Fade_Stagger w-[30px] h-[30px] flex items-center justify-center"
-                            >
-                                <span class="w-full h-full flex items-center justify-center" set:html={link.icon} />
-                            </a>
-                        ),
-                    )
-            }
-        </div>
+      <p class="eyebrow mt-8" data-reveal style="--reveal-delay: 60ms">
+        {profile.name} · <T t={profile.role} />
+      </p>
+      <h1 class="mt-4 text-[length:var(--text-display)] leading-[0.98] font-semibold tracking-[-0.045em] text-balance" data-reveal style="--reveal-delay: 120ms">
+        <T t={profile.headline} />
+      </h1>
+      <p class="mt-7 max-w-xl text-lg leading-relaxed text-pretty text-muted" data-reveal style="--reveal-delay: 180ms">
+        <T t={profile.intro} />
+      </p>
+
+      <div class="mt-10 flex flex-wrap items-center gap-3" data-reveal style="--reveal-delay: 240ms">
+        <a href="#work" class="group inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-[15px] font-medium text-bg transition-transform hover:-translate-y-0.5">
+          <T t={ui.hero.seeWork} />
+          <Arrow class="size-4 transition-transform group-hover:translate-x-0.5" />
+        </a>
+        <a href="#contact" class="inline-flex items-center gap-2 rounded-full border border-line-strong px-6 py-3 text-[15px] font-medium text-fg transition-colors hover:bg-white/[0.05]">
+          <T t={ui.hero.contact} />
+        </a>
+        <ul class="ml-1 flex items-center gap-1">
+          {
+            profile.links.map((l) => (
+              <li>
+                <a
+                  href={l.url}
+                  target={l.url.startsWith('http') ? '_blank' : undefined}
+                  rel="noopener noreferrer"
+                  aria-label={l.label}
+                  title={l.label}
+                  class="grid size-11 place-items-center rounded-full text-dim transition-colors hover:bg-white/[0.06] hover:text-fg"
+                >
+                  <span class="social-icon size-[18px]" set:html={l.icon} />
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
     </div>
 
-    <!-- Hero Orbit Animation -->
-    <div
-        class="Hero_Orbit relative flex_center w-[340px] lg:w-[500px] aspect-square"
-    >
-        <div
-            id="avatarImage"
-            role="button"
-            class="flex_center w-[180px] sm:w-[250px] aspect-square rounded-full z-10 cursor-pointer"
-            style={{ opacity: 0 }}
-        >
-            <Image
-                src={config.avatar}
-                alt=`${config.firstName} ${config.lastName} Avatar`
-                class="object-cover w-full h-full rounded-full noDrag"
-                width={896}
-                height={896}
-                quality={100}
-                priority
-            />
-        </div>
+    <figure class="relative mx-auto w-full max-w-sm lg:max-w-none" data-reveal style="--reveal-delay: 200ms">
+      <div class="absolute -inset-6 -z-10 rounded-[40px] bg-[radial-gradient(closest-side,rgb(255_122_48/0.22),transparent)] blur-2xl" aria-hidden="true"></div>
+      <div class="overflow-hidden rounded-[28px] border border-line bg-elev">
+        <Image
+          src={profile.portrait}
+          alt={`${profile.name}`}
+          widths={[360, 540, 720]}
+          sizes="(min-width: 1024px) 26rem, 90vw"
+          class="aspect-[4/5] w-full object-cover object-top"
+          loading="eager"
+          fetchpriority="high"
+        />
+      </div>
+      <figcaption class="absolute inset-x-3 bottom-3 flex items-center justify-between rounded-2xl border border-line bg-bg/70 px-4 py-3 backdrop-blur-md">
+        <span>
+          <span class="block text-sm font-medium">{profile.name}</span>
+          <span class="block font-mono text-[11px] tracking-wider text-dim uppercase">{profile.alias} · <T t={profile.location} /></span>
+        </span>
+        <span class="rounded-full bg-white/[0.06] px-2.5 py-1 font-mono text-[11px] text-muted">GMT+2</span>
+      </figcaption>
+    </figure>
+  </div>
 
-        <!-- Orbit Trails -->
-        <div class="Spring_Up Hero_Trail Trail1">
-            <span class="Orbit_Dot"></span>
+  <dl class="mt-20 grid gap-8 border-t border-line pt-10 sm:grid-cols-3" data-reveal>
+    {
+      profile.stats.map((s) => (
+        <div>
+          <dt class="sr-only"><T t={s.label} /></dt>
+          <dd class="text-2xl font-semibold tracking-tight md:text-3xl">{s.value}</dd>
+          <dd class="mt-1 text-sm text-dim"><T t={s.label} /></dd>
         </div>
-        <div class="Spring_Up Hero_Trail Trail2">
-            <span class="Orbit_Dot"></span>
-        </div>
-        <div class="Spring_Up Hero_Trail Trail3">
-            <span class="Orbit_Dot"></span>
-        </div>
-        <div class="Spring_Up Hero_Trail Trail4">
-            <span class="Orbit_Dot"></span>
-        </div>
-    </div>
+      ))
+    }
+  </dl>
 </section>

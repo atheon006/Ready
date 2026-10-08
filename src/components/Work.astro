@@ -1,0 +1,26 @@
+---
+import { ui } from '@/data/i18n';
+import { featured, others } from '@/data/projects';
+import FeaturedProject from './FeaturedProject.astro';
+import ProjectCard from './ProjectCard.astro';
+import T from './T.astro';
+---
+
+<section id="work" class="container-page py-20 md:py-28" aria-labelledby="work-title">
+  <div class="max-w-2xl" data-reveal>
+    <p class="eyebrow"><T t={ui.work.eyebrow} /></p>
+    <h2 id="work-title" class="mt-4 text-4xl font-semibold tracking-[-0.03em] text-balance md:text-5xl"><T t={ui.work.title} /></h2>
+    <p class="mt-5 text-lg text-muted"><T t={ui.work.intro} /></p>
+  </div>
+
+  <div class="mt-16 space-y-24 md:space-y-32">
+    {featured.map((p, i) => <FeaturedProject project={p} index={i} />)}
+  </div>
+
+  <div class="mt-28">
+    <h3 class="font-mono text-xs tracking-[0.14em] text-dim uppercase" data-reveal><T t={ui.work.more} /></h3>
+    <div class="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      {others.map((p) => <ProjectCard project={p} />)}
+    </div>
+  </div>
+</section>
