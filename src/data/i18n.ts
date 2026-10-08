@@ -37,8 +37,8 @@ export const ui = {
     eyebrow: bi('Projets', 'Selected work'),
     title: bi('Des produits en ligne, utilisés pour de vrai.', 'Shipped products, built for real use.'),
     intro: bi(
-      'Des produits complets, de l’interface à la base de données, dont deux en tant que CTO, puis d’autres projets auxquels j’ai participé.',
-      'Complete products, from the interface down to the database, two of them as CTO, followed by other projects I have worked on.',
+      'Des produits complets, de l’interface à la base de données, dont deux en tant que CTO, puis d’autres projets, dont un que j’ai cofondé.',
+      'Complete products, from the interface down to the database, two of them as CTO, followed by other projects, including one I co-founded.',
     ),
     more: bi('Autres projets', 'More projects'),
     caseStudy: bi('Étude de cas', 'Case study'),

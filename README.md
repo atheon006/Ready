@@ -14,7 +14,7 @@ Développeur web, mobile et systèmes à Goma (RD Congo). Ce dépôt contient le
 | **ParentEcole** | Suivi scolaire entre l'école et les parents : app Android et web, site de gestion de l'école. Rôle : CTO | [Parents](https://parentecole.web.app) · [École](https://parentecole-app.web.app) | [ecoleparent](https://github.com/atheon006/ecoleparent) |
 | **XERA1** | Plateforme où les créateurs documentent leur progression pour attirer collaborateurs et investisseurs. Rôle : CTO | [xera1.xyz](https://xera1.xyz) | [GIBRILmadak/XERA1](https://github.com/GIBRILmadak/XERA1) |
 | **EduTrack** | Gestion scolaire multiplateforme en Flutter (Android et PWA) | [copa-ecole.web.app](https://copa-ecole.web.app) | [EduTrack-2.2](https://github.com/atheon006/EduTrack-2.2) |
-| Objets perdus | Étiquettes QR pour retrouver ses objets perdus (participation au développement) | [objetsperdus.online](https://objetsperdus.online) | — |
+| Objets perdus | Étiquettes QR pour retrouver ses objets perdus. Rôle : cofondateur | [objetsperdus.online](https://objetsperdus.online) | — |
 | Portfolio v1 | Première version de ce portfolio (Vite, GSAP) | [portfolioready.vercel.app](https://portfolioready.vercel.app) | [portfolio-Ready-du-copa](https://github.com/atheon006/portfolio-Ready-du-copa) |
 | ARENA | Prototype Angular connecté à l'API Gemini | — | [ARENA-V3](https://github.com/atheon006/ARENA-V3) |
 | Shinobi no Sato | Quiz et duels pour fans d'anime (React, Firebase, Gemini) | — | Privé |

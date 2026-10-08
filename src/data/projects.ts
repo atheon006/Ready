@@ -256,7 +256,7 @@ export const projects: Project[] = [
     status: 'live',
     accent: '#4f6fbf',
     type: bi('Application web · étiquettes QR', 'Web app · QR labels'),
-    role: bi('Participation au développement', 'Contributor'),
+    role: bi('Cofondateur', 'Co-founder'),
     tagline: bi('Chaque objet mérite de retrouver son propriétaire.', 'Every lost item deserves to find its way home.'),
     summary: bi(
       'Des planches de QR codes uniques à coller sur ses affaires : la personne qui trouve l’objet scanne le code et contacte le propriétaire, sans jamais voir ses données personnelles.',
