@@ -19,6 +19,9 @@ import v1Cover from '@assets/projects/portfolio-v1-cover.webp';
 import v1Desktop from '@assets/projects/portfolio-v1-desktop.webp';
 import v1Mobile from '@assets/projects/portfolio-v1-mobile.webp';
 import arenaCover from '@assets/projects/arena-cover.webp';
+import objetsCover from '@assets/projects/objets-perdus-cover.webp';
+import objetsDesktop from '@assets/projects/objets-perdus-desktop.webp';
+import objetsMobile from '@assets/projects/objets-perdus-mobile.webp';
 import shinobiCover from '@assets/projects/shinobi-cover.webp';
 
 export type Status = 'live' | 'beta' | 'prototype' | 'archived';
@@ -205,6 +208,45 @@ export const projects: Project[] = [
       'Reprise et extension d’un projet open source de gestion scolaire (Ash469).',
       'Builds on and extends an open-source school management project (Ash469).',
     ),
+  },
+  {
+    slug: 'objets-perdus',
+    name: 'Objets perdus',
+    featured: false,
+    year: '2026',
+    status: 'live',
+    accent: '#4f6fbf',
+    type: bi('Application web · étiquettes QR', 'Web app · QR labels'),
+    role: bi('Participation au développement', 'Contributor'),
+    tagline: bi('Chaque objet mérite de retrouver son propriétaire.', 'Every lost item deserves to find its way home.'),
+    summary: bi(
+      'Des planches de QR codes uniques à coller sur ses affaires : la personne qui trouve l’objet scanne le code et contacte le propriétaire, sans jamais voir ses données personnelles.',
+      'Sheets of unique QR codes to stick on your belongings: whoever finds the item scans the code and contacts the owner without ever seeing their personal details.',
+    ),
+    description: [
+      bi(
+        'Objets perdus génère des planches de QR codes à coller sur un téléphone, un portefeuille, des clés, un bagage ou un passeport. Un simple scan permet à la personne qui retrouve l’objet de contacter son propriétaire instantanément.',
+        'Objets perdus generates sheets of QR codes to stick on a phone, wallet, keys, luggage or passport. A single scan lets whoever finds the item contact its owner instantly.',
+      ),
+      bi(
+        'Les coordonnées du propriétaire restent privées : le contact passe par l’application. Connexion avec Google ou par e-mail, protection anti-robots par reCAPTCHA.',
+        'The owner’s details stay private: contact goes through the app. Sign-in with Google or email, bot protection with reCAPTCHA.',
+      ),
+    ],
+    highlights: [
+      bi('QR codes uniques imprimables par planche', 'Printable sheets of unique QR codes'),
+      bi('Contact du propriétaire sans exposer ses données', 'Owner contact without exposing personal data'),
+      bi('Connexion Google ou e-mail, protection reCAPTCHA', 'Google or email sign-in, reCAPTCHA protection'),
+    ],
+    stack: [tech.React, tech.Firebase, tech.Vercel],
+    links: [{ label: bi('Voir le site', 'Visit site'), url: 'https://objetsperdus.online' }],
+    source: null,
+    cover: objetsCover,
+    coverAlt: bi('Accueil d’Objets perdus sur ordinateur et sur téléphone', 'Objets perdus home page on desktop and phone'),
+    shots: [
+      { image: objetsDesktop, kind: 'desktop', alt: bi('Accueil d’Objets perdus sur ordinateur', 'Objets perdus on desktop') },
+      { image: objetsMobile, kind: 'mobile', alt: bi('Accueil d’Objets perdus sur téléphone', 'Objets perdus on a phone') },
+    ],
   },
   {
     slug: 'portfolio-v1',

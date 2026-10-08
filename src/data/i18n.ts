@@ -11,8 +11,23 @@ export const ui = {
   nav: {
     work: bi('Projets', 'Work'),
     about: bi('À propos', 'About'),
+    oss: bi('Open source', 'Open source'),
     stack: bi('Compétences', 'Skills'),
     contact: bi('Contact', 'Contact'),
+  },
+  oss: {
+    eyebrow: bi('Open source', 'Open source'),
+    title: bi('Des projets open source que j’ai repris ou que j’utilise.', 'Open-source projects I have reworked or use.'),
+    intro: bi(
+      'Des dépôts d’autres développeurs, que j’ai modifiés pour mes besoins ou que j’utilise. Le mérite du projet d’origine revient à ses auteurs.',
+      'Repositories by other developers that I have adapted to my needs or use. Credit for the original projects goes to their authors.',
+    ),
+    modified: bi('Modifié', 'Modified'),
+    used: bi('Utilisé', 'Used'),
+    forkOf: bi('Fork de', 'Fork of'),
+    myWork: bi('Ma contribution :', 'My contribution:'),
+    myFork: bi('Mon fork', 'My fork'),
+    site: bi('Site du projet', 'Project site'),
   },
   hero: {
     seeWork: bi('Voir mes projets', 'See my work'),
@@ -22,8 +37,8 @@ export const ui = {
     eyebrow: bi('Projets', 'Selected work'),
     title: bi('Des produits en ligne, utilisés pour de vrai.', 'Shipped products, built for real use.'),
     intro: bi(
-      'Trois applications complètes, de l’interface à la base de données, et quelques projets plus courts.',
-      'Three complete applications, from the interface down to the database, plus a few shorter projects.',
+      'Trois applications complètes, de l’interface à la base de données, puis d’autres projets auxquels j’ai participé.',
+      'Three complete applications, from the interface down to the database, followed by other projects I have worked on.',
     ),
     more: bi('Autres projets', 'More projects'),
     caseStudy: bi('Étude de cas', 'Case study'),

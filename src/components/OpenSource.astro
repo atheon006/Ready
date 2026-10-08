@@ -1,0 +1,73 @@
+---
+import { Image } from 'astro:assets';
+import { ui } from '@/data/i18n';
+import { openSource } from '@/data/opensource';
+import Arrow from './Arrow.astro';
+import T from './T.astro';
+---
+
+<section id="open-source" class="container-page py-20 md:py-28" aria-labelledby="oss-title">
+  <div class="max-w-2xl" data-reveal>
+    <p class="eyebrow"><T t={ui.oss.eyebrow} /></p>
+    <h2 id="oss-title" class="mt-4 text-4xl font-semibold tracking-[-0.03em] text-balance md:text-5xl"><T t={ui.oss.title} /></h2>
+    <p class="mt-5 text-lg text-muted"><T t={ui.oss.intro} /></p>
+  </div>
+
+  <div class="mt-14 grid gap-5 md:grid-cols-2">
+    {
+      openSource.map((o) => (
+        <article class="flex flex-col overflow-hidden rounded-[22px] border border-line bg-elev" data-reveal>
+          <div class="overflow-hidden border-b border-line">
+            <Image
+              src={o.image}
+              alt={o.imageAlt.fr}
+              data-alt-en={o.imageAlt.en}
+              widths={[400, 640, 800]}
+              sizes="(min-width: 1216px) 36rem, (min-width: 768px) 46vw, 94vw"
+              class="aspect-[16/10] w-full object-cover"
+            />
+          </div>
+          <div class="flex flex-1 flex-col p-6">
+            <div class="flex items-start justify-between gap-3">
+              <h3 class="text-lg font-semibold tracking-tight">{o.name}</h3>
+              <span
+                class:list={[
+                  'shrink-0 rounded-full border px-2.5 py-0.5 font-mono text-[11px] tracking-wide',
+                  o.kind === 'modified' ? 'border-accent/40 text-accent-ink' : 'border-line text-muted',
+                ]}
+              >
+                <T t={o.kind === 'modified' ? ui.oss.modified : ui.oss.used} />
+              </span>
+            </div>
+            <p class="mt-1 font-mono text-xs text-dim">
+              <T t={ui.oss.forkOf} />{' '}
+              <a href={o.upstream.url} target="_blank" rel="noopener noreferrer" class="underline decoration-line-strong underline-offset-2 hover:text-fg">
+                {o.upstream.label}
+              </a>
+            </p>
+            <p class="mt-4 text-[15px] leading-relaxed text-muted"><T t={o.description} /></p>
+            <p class="mt-3 text-[15px] leading-relaxed">
+              <span class="font-medium text-fg"><T t={ui.oss.myWork} /></span>{' '}
+              <span class="text-muted"><T t={o.contribution} /></span>
+            </p>
+            <p class="mt-4 flex flex-wrap gap-x-3 gap-y-1 font-mono text-xs text-dim">
+              {o.stack.map((s) => <span>{s}</span>)}
+            </p>
+            <div class="mt-auto flex flex-wrap gap-x-5 gap-y-2 pt-5 text-sm">
+              <a href={o.fork} target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-1.5 text-fg/85 hover:text-accent-ink">
+                <T t={ui.oss.myFork} />
+                <Arrow dir="up-right" class="size-3.5 opacity-70" />
+              </a>
+              {o.site && (
+                <a href={o.site} target="_blank" rel="noopener noreferrer" class="group inline-flex items-center gap-1.5 text-fg/85 hover:text-accent-ink">
+                  <T t={ui.oss.site} />
+                  <Arrow dir="up-right" class="size-3.5 opacity-70" />
+                </a>
+              )}
+            </div>
+          </div>
+        </article>
+      ))
+    }
+  </div>
+</section>

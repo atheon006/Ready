@@ -13,11 +13,21 @@ Développeur web, mobile et systèmes à Goma (RD Congo). Ce dépôt contient le
 | **ATLAS** | Marketplace des boutiques vérifiées de Goma : paiement bloqué jusqu'à la livraison, app Flutter, espace d'administration | [Marketplace](https://atlas-web-portal.vercel.app) · [Démo](https://atlas-web-psi-pied.vercel.app) | Privé |
 | **ParentEcole** | Suivi scolaire entre l'école et les parents : app Android et web, site de gestion de l'école | [Parents](https://parentecole.web.app) · [École](https://parentecole-app.web.app) | [ecoleparent](https://github.com/atheon006/ecoleparent) |
 | **EduTrack** | Gestion scolaire multiplateforme en Flutter (Android et PWA) | [copa-ecole.web.app](https://copa-ecole.web.app) | [EduTrack-2.2](https://github.com/atheon006/EduTrack-2.2) |
+| Objets perdus | Étiquettes QR pour retrouver ses objets perdus (participation au développement) | [objetsperdus.online](https://objetsperdus.online) | — |
 | Portfolio v1 | Première version de ce portfolio (Vite, GSAP) | [portfolioready.vercel.app](https://portfolioready.vercel.app) | [portfolio-Ready-du-copa](https://github.com/atheon006/portfolio-Ready-du-copa) |
 | ARENA | Prototype Angular connecté à l'API Gemini | — | [ARENA-V3](https://github.com/atheon006/ARENA-V3) |
 | Shinobi no Sato | Quiz et duels pour fans d'anime (React, Firebase, Gemini) | — | Privé |
 
 Les visuels des projets sont de vraies captures des sites en ligne.
+
+### Open source : projets repris ou utilisés
+
+| Projet | Origine | Ce que j'en ai fait |
+| --- | --- | --- |
+| XERA | [GIBRILmadak/XERA1](https://github.com/GIBRILmadak/XERA1) | Migration vers React (Vite) et remise en route du déploiement Vercel |
+| Arcane-Ops | [apexinfinity243/Arcane-Ops](https://github.com/apexinfinity243/Arcane-Ops) | Compilation Android, Firebase, notifications, intégration continue |
+| serpantinum | [ilyamiro/serpantinum](https://github.com/ilyamiro/serpantinum) | Environnement de bureau que j'utilise sous Linux |
+| Midnight-Disk-Jocky | [lostlight-commits/Midnight-Disk-Jocky](https://github.com/lostlight-commits/Midnight-Disk-Jocky) | Bot musical Discord auto-hébergé |
 
 <p>
   <img src="docs/apercu-projet.webp" alt="Page d'un projet" width="72%">
