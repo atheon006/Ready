@@ -16,16 +16,33 @@ const { title = site.title, description = site.description, home = true, image =
 const canonical = new URL(Astro.url.pathname, site.url).toString();
 const ogImage = new URL(image, site.url).toString();
 
+// Données structurées : la page d'accueil est la page de profil, qui relie tous mes comptes
+// (Google s'en sert pour associer ces comptes à mon nom dans les résultats de recherche).
+const sameAs = profile.links.filter((l) => l.url.startsWith('http')).map((l) => l.url);
 const person = {
-  '@context': 'https://schema.org',
   '@type': 'Person',
+  '@id': `${site.url}/#person`,
   name: profile.name,
-  alternateName: profile.alias,
+  alternateName: [profile.alias, 'Atheon-Dev'],
   url: site.url,
+  image: 'https://github.com/atheon006.png',
+  email: `mailto:${profile.email}`,
   jobTitle: profile.role.fr,
+  description: site.description.fr,
   address: { '@type': 'PostalAddress', addressLocality: 'Goma', addressCountry: 'CD' },
-  sameAs: profile.links.filter((l) => l.url.startsWith('http')).map((l) => l.url),
+  knowsLanguage: ['fr', 'en'],
+  sameAs,
 };
+const structured = home
+  ? {
+      '@context': 'https://schema.org',
+      '@type': 'ProfilePage',
+      url: site.url,
+      name: title.fr,
+      inLanguage: ['fr', 'en'],
+      mainEntity: person,
+    }
+  : { '@context': 'https://schema.org', ...person };
 ---
 
 <!doctype html>
@@ -67,7 +84,7 @@ const person = {
         meta: [{ name: 'author', content: `${profile.name} (${profile.alias})` }],
       }}
     />
-    <script is:inline type="application/ld+json" set:html={JSON.stringify(person)} />
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(structured)} />
   </head>
 
   <body class="grain">

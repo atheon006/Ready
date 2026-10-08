@@ -19,6 +19,8 @@ import v1Cover from '@assets/projects/portfolio-v1-cover.webp';
 import v1Desktop from '@assets/projects/portfolio-v1-desktop.webp';
 import v1Mobile from '@assets/projects/portfolio-v1-mobile.webp';
 import arenaCover from '@assets/projects/arena-cover.webp';
+import xeraCover from '@assets/projects/xera-cover.webp';
+import xeraDesktop from '@assets/projects/xera-desktop.webp';
 import objetsCover from '@assets/projects/objets-perdus-cover.webp';
 import objetsDesktop from '@assets/projects/objets-perdus-desktop.webp';
 import objetsMobile from '@assets/projects/objets-perdus-mobile.webp';
@@ -120,7 +122,7 @@ export const projects: Project[] = [
     accent: '#2f8f62',
     logo: parentLogo,
     type: bi('Suivi scolaire · Android, web & administration', 'School tracking · Android, web & admin'),
-    role: bi('Conception et développement complet', 'Product design and full-stack development'),
+    role: bi('CTO · architecture et développement', 'CTO · architecture and development'),
     tagline: bi('Le lien entre l’école et les parents, en temps réel.', 'The link between school and parents, in real time.'),
     summary: bi(
       'Une app Android et web pour les parents (présences, frais et dates de renvoi, devoirs, conduite) et un site pour l’école (appel, caisse, communiqués), sur une base Firebase sécurisée côté serveur.',
@@ -159,6 +161,43 @@ export const projects: Project[] = [
       { image: parentDesktop, kind: 'desktop', alt: bi('Connexion à l’espace école', 'School site sign-in') },
       { image: parentMobile, kind: 'mobile', alt: bi('Accueil de l’app des parents', 'Parent app welcome screen') },
     ],
+  },
+  {
+    slug: 'xera1',
+    name: 'XERA1',
+    featured: true,
+    year: '2026',
+    status: 'live',
+    accent: '#8b5cf6',
+    type: bi('Plateforme communautaire · web & PWA', 'Community platform · web & PWA'),
+    role: bi('CTO · architecture et développement', 'CTO · architecture and development'),
+    tagline: bi('Transformer sa progression en opportunités.', 'Turn your progress into opportunities.'),
+    summary: bi(
+      'Une infrastructure de progression où les créateurs documentent leur travail, publient des preuves de leurs avancées et attirent collaborateurs, investisseurs ou soutien financier.',
+      'A progress platform where builders document their work, publish proof of their progress and attract collaborators, investors or funding.',
+    ),
+    description: [
+      bi(
+        'XERA1 aide les créateurs à bâtir une réputation fondée sur l’exécution : ils créent des projets, publient chaque jour des traces de leur avancée, choisissent qui les voit, et transforment ce suivi en crédibilité auprès d’investisseurs, de collaborateurs et de leur communauté.',
+        'XERA1 helps builders earn a reputation based on execution: they create projects, post daily proof of progress, choose who sees it, and turn that track record into credibility with investors, collaborators and their community.',
+      ),
+      bi(
+        'En tant que CTO, j’ai porté l’architecture technique : migration vers une application React (Vite) en page unique, déploiement sur Vercel avec rendu côté serveur et adresses propres, données et comptes avec Supabase, et application installable (PWA).',
+        'As CTO I led the technical architecture: migration to a React (Vite) single-page app, deployment on Vercel with server-side handlers and clean URLs, data and accounts with Supabase, and an installable app (PWA).',
+      ),
+    ],
+    highlights: [
+      bi('Projets, mises à jour quotidiennes et preuves de progression', 'Projects, daily updates and proof of progress'),
+      bi('Fil, profils, messagerie et recherche', 'Feed, profiles, messaging and search'),
+      bi('Application installable (PWA)', 'Installable app (PWA)'),
+      bi('React (Vite) déployé sur Vercel, données Supabase', 'React (Vite) on Vercel, Supabase data'),
+    ],
+    stack: [tech.React, tech.Vite, tech.Supabase, tech.Vercel],
+    links: [{ label: bi('Voir le site', 'Visit site'), url: 'https://xera1.xyz' }],
+    source: 'https://github.com/GIBRILmadak/XERA1',
+    cover: xeraCover,
+    coverAlt: bi('Accueil de XERA1 sur ordinateur', 'XERA1 home page on desktop'),
+    shots: [{ image: xeraDesktop, kind: 'desktop', alt: bi('Accueil de XERA1', 'XERA1 home page') }],
   },
   {
     slug: 'edutrack',

@@ -1,7 +1,6 @@
 import type { ImageMetadata } from 'astro';
 import { bi, type Bi } from './i18n';
 
-import xeraCover from '@assets/projects/xera-cover.webp';
 import arcaneCover from '@assets/projects/arcane-ops-cover.webp';
 import serpCover from '@assets/projects/serpantinum-cover.webp';
 import djCover from '@assets/projects/midnight-dj-cover.webp';
@@ -21,24 +20,6 @@ export interface OpenSourceEntry {
 }
 
 export const openSource: OpenSourceEntry[] = [
-  {
-    name: 'XERA',
-    kind: 'modified',
-    upstream: { label: 'GIBRILmadak/XERA1', url: 'https://github.com/GIBRILmadak/XERA1' },
-    fork: 'https://github.com/atheon006/XERA',
-    site: 'https://xera1.xyz',
-    description: bi(
-      'Plateforme où les créateurs documentent l’avancée de leurs projets pour attirer collaborateurs, investisseurs et communauté.',
-      'A platform where builders document their progress to attract collaborators, investors and an audience.',
-    ),
-    contribution: bi(
-      'Migration vers une application React (Vite) en page unique et remise en route du déploiement sur Vercel : rendu côté serveur, adresses propres, styles et connexion Supabase.',
-      'Migrated the app to a React (Vite) single-page application and fixed the Vercel deployment: server-side handlers, clean URLs, styles and the Supabase connection.',
-    ),
-    stack: ['React', 'Vite', 'Supabase', 'Vercel'],
-    image: xeraCover,
-    imageAlt: bi('Accueil de XERA1', 'XERA1 home page'),
-  },
   {
     name: 'Arcane-Ops',
     kind: 'modified',

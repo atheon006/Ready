@@ -3,6 +3,7 @@ import githubIcon from '@assets/SVGs/Github.svg?raw';
 import linkedinIcon from '@assets/SVGs/Linkedin.svg?raw';
 import mailIcon from '@assets/SVGs/Gmail.svg?raw';
 import discordIcon from '@assets/SVGs/Discord.svg?raw';
+import redditIcon from '@assets/SVGs/Reddit.svg?raw';
 import { bi } from './i18n';
 
 export const site = {
@@ -34,7 +35,7 @@ export const profile = {
     'Web and mobile applications built end to end: interface, database, security and deployment. For real-world needs, here in Goma and beyond.',
   ),
   stats: [
-    { value: '3', label: bi('applications en production', 'apps in production') },
+    { value: '4', label: bi('produits en ligne', 'products live') },
     { value: 'Web + Android', label: bi('du navigateur au téléphone', 'from browser to phone') },
     { value: 'FR · EN', label: bi('je travaille dans les deux langues', 'I work in both languages') },
   ],
@@ -74,6 +75,7 @@ export const profile = {
     { label: 'GitHub', url: 'https://github.com/atheon006', icon: githubIcon },
     { label: 'LinkedIn', url: 'https://www.linkedin.com/in/ready-kalonda-a8665a428/', icon: linkedinIcon },
     { label: 'E-mail', url: 'mailto:readykalonda38@gmail.com', icon: mailIcon },
-    { label: 'Discord', url: 'https://discord.gg/wF4KcGYgz', icon: discordIcon },
+    { label: 'Discord', url: 'https://discord.gg/2vZm74bM8', icon: discordIcon },
+    { label: 'Reddit', url: 'https://www.reddit.com/user/Some_Reception9198/', icon: redditIcon },
   ],
 };
