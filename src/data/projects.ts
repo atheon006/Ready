@@ -141,12 +141,17 @@ export const projects: Project[] = [
         'Les droits d’accès sont vérifiés par le serveur grâce à des règles Firestore couvertes par des tests automatiques ; l’APK Android est signé et construit par GitHub Actions.',
         'Access rights are enforced server-side by Firestore rules covered by automated tests; the Android APK is signed and built by GitHub Actions.',
       ),
+      bi(
+        'Les parents sont prévenus par notification dès qu’une absence, un paiement, un devoir ou un communiqué est enregistré, sur Android comme dans le navigateur. L’envoi passe par un Cloudflare Worker gratuit qui relit chaque événement avec un compte de service limité avant d’écrire au parent.',
+        'Parents get a notification as soon as an absence, a payment, homework or an announcement is recorded, on Android and in the browser. Delivery runs on a free Cloudflare Worker that re-reads each event with a restricted service account before notifying the parent.',
+      ),
     ],
     highlights: [
       bi('Appel express : seuls les absents et les retards sont cochés', 'Fast roll call: only absentees and late arrivals are ticked'),
       bi('Frais par tranches avec alertes avant la date de renvoi', 'Fees in instalments with alerts before the deadline'),
       bi('Liaison parent-enfant vérifiée (code + téléphone)', 'Verified parent–child link (code + phone)'),
       bi('Règles de sécurité testées et double authentification du personnel', 'Tested security rules and staff two-factor authentication'),
+      bi('Notifications push gratuites (Cloudflare Workers et Firebase Cloud Messaging)', 'Free push notifications (Cloudflare Workers and Firebase Cloud Messaging)'),
       bi('Lisible hors connexion, connexion Google native sur Android', 'Readable offline, native Google sign-in on Android'),
     ],
     stack: [tech.React, tech.TypeScript, tech.Tailwind, tech.Capacitor, tech.Firebase, tech.GitHubActions],
